@@ -1,0 +1,11 @@
+ssh root@207.126.167.114
+
+scp index.html root@207.126.167.114:/var/www/landing/index.html
+
+scp assets/img/doctora.svg root@207.126.167.114:/var/www/landing/assets/img
+scp RamazziniBrand.ico root@207.126.167.114:/var/www/landing/assets/img
+
+scp assets/img/doctor-tecleando.png root@207.126.167.114:/var/www/landing/assets/img
+scp assets/img/mujer-cubrebocas.webp root@207.126.167.114:/var/www/landing/assets/img
+scp assets/img/captura.png root@207.126.167.114:/var/www/landing/assets/img
+scp assets/img/captura.svg root@207.126.167.114:/var/www/landing/assets/img
