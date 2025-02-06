@@ -9,3 +9,7 @@ scp assets/img/doctor-tecleando.png root@207.126.167.114:/var/www/landing/assets
 scp assets/img/mujer-cubrebocas.webp root@207.126.167.114:/var/www/landing/assets/img
 scp assets/img/captura.png root@207.126.167.114:/var/www/landing/assets/img
 scp assets/img/captura.svg root@207.126.167.114:/var/www/landing/assets/img
+scp assets/img/organizacion.png root@207.126.167.114:/var/www/landing/assets/img
+scp assets/img/organizacion.svg root@207.126.167.114:/var/www/landing/assets/img
+scp assets/img/informes.png root@207.126.167.114:/var/www/landing/assets/img
+scp assets/img/informes.svg root@207.126.167.114:/var/www/landing/assets/img
