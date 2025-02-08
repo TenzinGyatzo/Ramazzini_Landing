@@ -13,3 +13,7 @@ scp assets/img/organizacion.png root@207.126.167.114:/var/www/landing/assets/img
 scp assets/img/organizacion.svg root@207.126.167.114:/var/www/landing/assets/img
 scp assets/img/informes.png root@207.126.167.114:/var/www/landing/assets/img
 scp assets/img/informes.svg root@207.126.167.114:/var/www/landing/assets/img
+scp assets/img/estadisticas.png root@207.126.167.114:/var/www/landing/assets/img
+scp assets/img/estadisticas.svg root@207.126.167.114:/var/www/landing/assets/img
+
+scp forms/contact.php root@207.126.167.114:/var/www/landing/forms/contact.php
