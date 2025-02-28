@@ -1786,6 +1786,7 @@ section,
   color: var(--contrast-color);
 }
 
+.pricing .pricing-card.popular h2,
 .pricing .pricing-card.popular h3,
 .pricing .pricing-card.popular h4 {
   color: var(--contrast-color);
