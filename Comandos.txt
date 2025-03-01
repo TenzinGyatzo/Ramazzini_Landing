@@ -1,6 +1,7 @@
 ssh root@207.126.167.114
 
 scp index.html root@207.126.167.114:/var/www/landing/index.html
+scp assets/css/main.css root@207.126.167.114:/var/www/landing/assets/css
 
 scp assets/img/doctora.svg root@207.126.167.114:/var/www/landing/assets/img
 scp RamazziniBrand.ico root@207.126.167.114:/var/www/landing/assets/img

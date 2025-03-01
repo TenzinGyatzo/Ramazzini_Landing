@@ -670,6 +670,41 @@ section,
   overflow: clip;
 }
 
+section .TyC {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 10px 0;
+  scroll-margin-top: 90px;
+  overflow: clip;
+  line-height: 1.2;
+}
+
+section .TyC h5 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 2;
+}
+
+section .TyC p {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+section .li {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+ol.romanos {
+  list-style-type: upper-roman; /* Números romanos en mayúsculas */
+}
+
+ol.letras {
+  list-style-type: lower-alpha; /* Letras minúsculas (a, b, c, d, ...) */
+}
+
 @media (max-width: 1199px) {
 
   section,
