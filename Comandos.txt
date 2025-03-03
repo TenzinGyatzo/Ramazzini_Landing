@@ -1,6 +1,8 @@
 ssh root@207.126.167.114
 
 scp index.html root@207.126.167.114:/var/www/landing/index.html
+scp terminos-y-condiciones.html root@207.126.167.114:/var/www/landing/terminos-y-condiciones.html
+
 scp assets/css/main.css root@207.126.167.114:/var/www/landing/assets/css
 
 scp assets/img/doctora.svg root@207.126.167.114:/var/www/landing/assets/img
@@ -16,5 +18,6 @@ scp assets/img/informes.png root@207.126.167.114:/var/www/landing/assets/img
 scp assets/img/informes.svg root@207.126.167.114:/var/www/landing/assets/img
 scp assets/img/estadisticas.png root@207.126.167.114:/var/www/landing/assets/img
 scp assets/img/estadisticas.svg root@207.126.167.114:/var/www/landing/assets/img
+scp assets/img/perfil.jpeg root@207.126.167.114:/var/www/landing/assets/img
 
 scp forms/contact.php root@207.126.167.114:/var/www/landing/forms/contact.php
