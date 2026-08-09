@@ -150,9 +150,12 @@ function isValidPhone(phone: string) {
   return digits.length >= 10 && digits.length <= 15;
 }
 
-function redirectToThanks(request: NextRequest, status: string) {
+function redirectToThanks(_request: NextRequest, status: string) {
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://get.ramazzini.app";
+
   return NextResponse.redirect(
-    new URL(`/gracias?estado=${encodeURIComponent(status)}`, request.url),
+    new URL(`/gracias?estado=${encodeURIComponent(status)}`, siteUrl),
     303,
   );
 }
