@@ -1,0 +1,324 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Términos y Condiciones",
+  description:
+    "Consulta los términos y condiciones de uso y privacidad de Ramazzini.",
+  alternates: {
+    canonical: "/terminos-y-condiciones",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const termsHtml = `
+<section class="terms-section">
+<p>Los TÉRMINOS Y CONDICIONES que a continuación se mencionan, rigen el uso de los contenidos, productos y servicios ofrecidos a través del SITIO WEB, del cual es titular EDGAR OMAR CORONEL GONZÁLEZ, quien en adelante será referido como "RAMAZZINI" para efectos del presente documento. Cualquier persona que desee acceder o hacer uso del SITIO WEB o los SERVICIOS que en él se ofrecen, podrá hacerlo sujetándose a los presentes TÉRMINOS Y CONDICIONES, así como a políticas y principios incorporados al presente documento.</p>
+<p><strong>IMPORTANTE:</strong> EL USUARIO DEBERÁ LEER DETENIDAMENTE ESTE DOCUMENTO DE TÉRMINOS Y CONDICIONES DE USO Y PRIVACIDAD ANTES DE USAR EL SITIO WEB. EL USO DEL SITIO WEB INDICA LA CONFIRMACIÓN DE QUE EL USUARIO HA LEÍDO ESTE DOCUMENTO Y ACEPTA SUS TÉRMINOS. SI NO ACEPTA LOS TÉRMINOS, EL USUARIO NO DEBE UTILIZAR EL SITIO WEB NI ADQUIRIR LOS PRODUCTOS Y SERVICIOS QUE EN SU CASO SEAN OFRECIDOS.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-i-definiciones">CAPÍTULO I.- DEFINICIONES</h5>
+<p>DEFINICIONES. Los términos con mayúscula inicial que se utilizan en el presente documento tienen el significado establecido a continuación o aquel que se les atribuye en cualquier otra sección del presente documento.</p>
+<ul>
+<li><strong>"TÉRMINOS Y CONDICIONES":</strong> Términos y condiciones de Uso y Privacidad que rigen el uso de los contenidos, productos y servicios ofrecidos.</li>
+<li><strong>"SITIO WEB" / "PÁGINAS":</strong> Espacio virtual en Internet que corresponde a las siguientes páginas: <a href="https://ramazzini.app/">ramazzini.app</a>, <a href="/">get.ramazzini.app</a>.</li>
+<li><strong>"COOKIES":</strong> Archivo de datos que se almacena en el disco duro de la computadora del USUARIO cuando éste tiene acceso al SITIO WEB.</li>
+<li><strong>"SERVICIOS":</strong> Servicios que RAMAZZINI presta en el SITIO WEB al USUARIO.</li>
+<li><strong>"SUSCRIPTOR":</strong> Persona física o moral que consume los productos y servicios ofrecidos por RAMAZZINI.</li>
+<li><strong>"USUARIO":</strong> Persona física que realiza el uso o acceso directo mediante equipo de cómputo y/o servicio de red de los contenidos y servicios ofrecidos en el SITIO WEB.</li>
+<li><strong>"USUARIO PRINCIPAL":</strong> Designa perfiles, otorga y revoca facultades a otros USUARIOS.</li>
+<li><strong>"PERFILES":</strong> Nivel de acceso que posee un USUARIO dentro del SITIO WEB.</li>
+<li><strong>"CONSUMIDOR":</strong> SUSCRIPTOR y USUARIO denominados en conjunto.</li>
+<li><strong>"DATOS PERSONALES":</strong> Cualquier información concerniente a una persona física o moral identificada o identificable.</li>
+<li><strong>"RESPONSABLE":</strong> Persona física o moral de carácter privado que decide sobre el tratamiento de los DATOS PERSONALES.</li>
+<li><strong>"TRATAMIENTO":</strong> La obtención, uso, (que incluye el acceso, manejo, aprovechamiento, transferencia o disposición de DATOS PERSONALES), divulgación o almacenamiento de DATOS PERSONALES por cualquier medio.</li>
+<li><strong>"DERECHOS ARCO":</strong> Derechos de Acceso, Rectificación, Cancelación y Oposición.</li>
+<li><strong>"CONSENTIMIENTO TÁCITO":</strong> Se entenderá que el USUARIO ha consentido en el tratamiento de los datos, cuando habiéndose puesto a su disposición los TÉRMINOS Y CONDICIONES, no manifieste su oposición.</li>
+</ul>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-ii-del-suscriptor">CAPÍTULO II. DEL SUSCRIPTOR</h5>
+<p>El SUSCRIPTOR autoriza a su(s) USUARIO(S) el uso, tratamiento, transmisión, divulgación de su información confidencial, datos personales, datos patrimoniales, datos fiscales y datos médicos del personal de sus empresas y clientes para el uso y acceso de los servicios prestados por RAMAZZINI en el SITIO WEB.</p>
+<p>La información del SUSCRIPTOR que se encuentre dada de alta con diversos USUARIOS, deberá contar con los permisos correspondientes del SUSCRIPTOR titular de la información.</p>
+<p>El SUSCRIPTOR es el responsable único y final de mantener en secreto sus claves de acceso con la cual tenga acceso a los SERVICIOS del SITIO WEB.</p>
+<p>El SUSCRIPTOR se responsabiliza del uso y divulgación de información que su(s) USUARIO(S) distribuyen y divulgan en el SITIO WEB, así como proporcionar información correcta y veraz en los formularios habilitados en el SITIO WEB, en los cuales el USUARIO tenga que proporcionar ciertos datos o información para el acceso a algún contenido, producto o servicio ofrecido por el propio SITIO WEB. En todo caso, el SUSCRIPTOR notificara de manera inmediata a RAMAZZINI acerca de cualquier hecho que permita suponer el uso indebido de la información registrada en dichos formularios, tales como, robo, extravío, o acceso no autorizado a cuenta y/o contraseñas, con el fin de proceder a su inmediata cancelación.</p>
+<p>El SUSCRIPTOR acepta que RAMAZZINI podrá administrar o gestionar el SITIO WEB de manera directa o a través de un TERCERO, lo cual no modifica en ningún sentido lo establecido en los presentes TÉRMINOS Y CONDICIONES.</p>
+<p>Al aceptar estos TÉRMINOS Y CONDICIONES, el SUSCRIPTOR da su CONSENTIMIENTO TÁCITO para regirse en lo establecido y disponer de la capacidad jurídica necesaria para sujetarse a los presentes TÉRMINOS Y CONDICIONES.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-iii-del-usuario">CAPÍTULO III. DEL USUARIO</h5>
+<p><strong>ACEPTACIÓN.</strong> El USUARIO acepta que los TÉRMINOS Y CONDICIONES le son aplicables por el simple uso o acceso a cualquiera de las páginas que integran el SITIO WEB, por lo que entenderemos que los acepta, y acuerda en obligarse en su cumplimiento.</p>
+<p>El acceso o utilización del SITIO WEB, así como de los recursos habilitados para interactuar entre los USUARIOS, o entre el USUARIO y RAMAZZINI tales como medios para realizar publicaciones o comentarios, confiere la condiciones de USUARIO del SITIO WEB, por lo que quedará sujeto a los presentes TÉRMINOS Y CONDICIONES, así como a sus ulteriores modificaciones, sin perjuicio de la aplicación de la legislación aplicable, por tanto, se tendrán por aceptados desde el momento en el que se accede al SITIO WEB. Dada la relevancia de lo anterior, se obliga al USUARIO revisar las actualizaciones que se realicen a los presentes TÉRMINOS Y CONDICIONES.</p>
+<p>El acceso al SITIO WEB no supone el establecimiento de ningún tipo de relación entre RAMAZZINI y el USUARIO.</p>
+<br/>
+<p>DE LA INFORMACIÓN. El SITIO WEB no tiene obligación de corroborar que la información presentada por el USUARIO sea propia, cierta, exacta y que cuenta con los poderes y facultades necesarios para el uso de los SERVICIOS prestados por RAMAZZINI.</p>
+<p>Aun así, el USUARIO se responsabiliza a proporcionar información correcta y veraz en los formularios habilitados en el SITIO WEB, en los cuales el USUARIO tenga que proporcionar ciertos datos o información para el acceso a algún contenido, producto o servicio ofrecido por el propio SITIO WEB. En todo caso, el USUARIO notificara de manera inmediata a RAMAZZINI acerca de cualquier hecho que permita suponer el uso indebido de la información registrada en dichos formularios, tales como, robo, extravío, o acceso no autorizado a cuenta y/o contraseñas, con el fin de proceder a su inmediata cancelación.</p>
+<br/>
+<p>Al tratarse de un SITIO WEB dirigido exclusivamente a personas que cuenten con la mayoría de edad, el USUARIO manifiesta ser mayor de edad y disponer de la capacidad jurídica necesaria para sujetarse a los presentes TÉRMINOS Y CONDICIONES.</p>
+<p>El SITIO WEB está dirigido principalmente a USUARIOS residentes en la República Mexicana, por lo cual, RAMAZZINI, no asegura que el SITIO WEB cumpla total o parcialmente con la legislación de otros países, de forma que, si el USUARIO reside o tiene su domicilio establecido en otro país y decide acceder o utilizar el SITIO WEB, lo hará bajo su propia responsabilidad y deberá asegurarse de que tal acceso y navegación cumple con la legislación local que le es aplicable, no asumiendo RAMAZZINI ninguna responsabilidad que se pueda derivar de dicho acto.</p>
+<br/>
+<p>El USUARIO es el responsable único y final de mantener en secreto sus claves de acceso con la cual tenga acceso a los SERVICIOS del SITIO WEB.</p>
+<br/>
+<p>El USUARIO acepta que RAMAZZINI podrá administrar o gestionar el SITIO WEB de manera directa o a través de un TERCERO, lo cual no modifica en ningún sentido lo establecido en los presentes TÉRMINOS Y CONDICIONES.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-iv-uso-y-acceso">CAPÍTULO IV. USO Y ACCESO</h5>
+<p>USO. Es responsabilidad del USUARIO utilizar el SITIO WEB de acuerdo con la forma en la que fue diseñado; en este sentido, queda prohibida la utilización de cualquier tipo de software que automatice la interacción o descarga de los contenidos o SERVICIOS proporcionados a través del SITIO WEB. Además, el USUARIO se compromete a utilizar la información, contenidos o servicios ofrecidos a través del SITIO WEB de manera licita, sin contravenir lo dispuesto en los presentes TÉRMINOS Y CONDICIONES, la moral o el orden público, y se abstendrá de realizar cualquier acto que pueda suponer una afectación a los derechos de terceros, o perjudique de algún modo el funcionamiento del SITIO WEB.</p>
+<br/>
+<p>RAMAZZINI tendrá el derecho a negar, restringir o condicionar al USUARIO el acceso a el SITIO WEB, total o parcialmente, a su entera discreción.</p>
+<br/>
+<p>El CONSUMIDOR expresamente reconoce y acepta que ni RAMAZZINI ni el SITIO WEB no son responsables por la conducta de los USUARIOS del sitio.</p>
+<br/>
+<p>ACCESO. El CONSUMIDOR reconoce que no todos los SERVICIOS están disponibles en todas las áreas geográficas y que algunos SERVICIOS pueden ser utilizados solamente con posterioridad a su contratación, activación o registro previo por el SUSCRIPTOR y/o mediante el pago de una tarifa mensual, según se indique en las condiciones de contratación que se establezcan en la documentación respectiva. RAMAZZINI no garantiza la disponibilidad y continuidad de la operación del SITIO WEB y de los SERVICIOS, ni la utilización del SITIO WEB o SERVICIOS en relación con cualquier actividad especifica, independientemente del medio de acceso que utilice el USUARIO incluido la telefonía móvil. RAMAZZINI no será responsable por daño o perdida alguna de cualquier naturaleza que pueda ser causado debido a la falta de disponibilidad o continuidad de operación del SITIO WEB y/o SERVICIOS.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-v-restricciones">CAPÍTULO V. RESTRICCIONES</h5>
+<p>El USUARIO no tiene el derecho de colocar híper ligas dentro del SITIO WEB, ni el derecho de colocar o utilizar los SERVICIOS en sitios o páginas propias o de terceros sin autorización previa y por escrito de RAMAZZINI. Asimismo, RAMAZZINI tendrá el derecho de limitar o impedir el uso del SITIO WEB a cualquier otro CONSUMIDOR.</p>
+<br/>
+<p>El CONSUMIDOR se abstendrá de:</p>
+<ol class="terms-list-roman">
+<li>Difamar, abusar, acosar, amenazar o violar alguna de otra manera los derechos legales (tales como los derechos a la privacidad, a la publicidad) de terceros.</li>
+<li>Publicar, anunciar, distribuir, difundir ningún material o información difamatorio, infractor, obsceno, indecente o ilícito.</li>
+<li>Cargar o adjuntar archivos que contengan programas informáticos u otros materiales que estén protegidos por las leyes sobre derechos de propiedad intelectual (o por derechos de privacidad o de publicidad), a menos que el USUARIO posea o tenga bajo su control los derechos sobre dichos programas informáticos o materiales, o haya obtenido todas las autorizaciones necesarias.</li>
+<li>Cargar o adjuntar archivos que contengan virus, archivos corruptos, u otros programas informáticos que pudieran afectar el funcionamiento de las computadoras de terceros.</li>
+<li>Borrar cualquier atribución de autoría, avisos legales, designaciones de propiedad o rótulos de ningún archivo cargado.</li>
+<li>Falsificar el origen o la fuente de materiales contenidos en un archivo cargado.</li>
+</ol>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-vi-suspension-o-cancelacion-de-la-cuenta">CAPÍTULO VI. SUSPENSIÓN O CANCELACIÓN DE LA CUENTA</h5>
+<p>Si RAMAZZINI determina que el USUARIO incumplió los TÉRMINOS Y CONDICIONES de una manera notoria o grave, se le hará llegar un comunicado mediante correo electrónico en donde se explicará el motivo de la suspensión y el terminado de esta. O en su caso la inhabilitación definitiva a el acceso de su cuenta. Asimismo, al momento de infringir reiteradamente los derechos de propiedad intelectual de otras personas o del SITIO WEB, también es causal de suspensión o cancelación de la cuenta.</p>
+<p>El USUARIO puede obtener más información sobre lo que puede hacer si se inhabilito su cuenta y si considera que la inhabilitación de su cuenta fue injustificada, comunicándose directamente en el domicilio, teléfono y/o correo electrónico de la oficina de privacidad mencionado en el capítulo IX de esta política de TÉRMINOS Y CONDICIONES.</p>
+<p>RAMAZZINI, se reserva el derecho a denegar, a su entera discreción, el acceso de un USUARIO a este SITIO WEB, sin previo aviso.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-vii-eliminacion-de-cuenta">CAPÍTULO VII. ELIMINACIÓN DE CUENTA</h5>
+<p>El USUARIO puede eliminar contenido de forma individual o todo junto a la vez eliminando la cuenta. Es posible que en nuestra base de datos queden copias de algunos materiales, pero no estarán asociados a ningún identificador personal.</p>
+<p>Los datos tales como correo electrónico, nombre completo, teléfono móvil, domicilio, fecha de nacimiento, RFC, CURP, número de seguridad social, fiscales y/o patrimoniales, y de más datos que se hayan agregado, podrán ser retenidos por el tiempo necesario para cumplir con obligaciones legales, fiscales o contractuales, de acuerdo con la normatividad vigente.</p>
+<p>No se podrá recuperar ningún contenido, asimismo, el USUARIO no podrá seguir utilizando el SITIO WEB y/o adquirir los SERVICIOS ofrecidos.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-viii-politica-de-cancelacion-y-devolucion">CAPÍTULO VIII. POLÍTICA DE CANCELACIÓN Y DEVOLUCIÓN</h5>
+<p>El presente capítulo tiene como objetivo establecer la política de cancelación y devolución de los SERVICIOS en el SITIO WEB.</p>
+<p>CANCELACIÓN. La cancelación de los servicios prestados por RAMAZZINI en el SITIO WEB, debe de ser realizada por el USUARIO a través del correo electrónico soporte@ramazzini.app, incluyendo nombre completo del usuario, nombre de cuenta en el sistema, Clave del Registro Federal de Contribuyentes (RFC), razón por la cual se solicita la cancelación.</p>
+<p>RAMAZZINI se reserva el derecho a cobrar una comisión para cubrir los gastos administrativos resultantes de la cancelación del SERVICIO.</p>
+<p>DEVOLUCIÓN. La devolución de los SERVICIOS prestados por RAMAZZINI debe de ser realizada por el USUARIO mediante correo electrónico: soporte@ramazzini.app, incluyendo nombre completo del usuario, nombre de cuenta en el sistema, Clave del Registro Federal de Contribuyentes (RFC), razón por la cual se solicita la devolución.</p>
+<p>El procedimiento de devolución consiste en calcular los días utilizados del SERVICIO y devolver la parte proporcional no consumida de la suscripción mensual. RAMAZZINI se reserva el derecho a cobrar una comisión para cubrir los gastos administrativos resultantes de la devolución del SERVICIO.</p>
+<p>La devolución de la parte proporcional no consumida de la suscripción mensual se realizará en un periodo de 10 días naturales después de haber presentado la solicitud.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-ix-propiedad-intelectual">CAPÍTULO IX. PROPIEDAD INTELECTUAL</h5>
+<p>Los derechos de propiedad intelectual respecto de los SERVICIOS y los signos distintivos y dominios de las páginas o el SITIO WEB, así como los derechos de uso y explotación de los mismos, incluyendo su divulgación, publicación, reproducción, distribución y transformación, son propiedad exclusiva del RAMAZZINI.</p>
+<p>RAMAZZINI es un nombre comercial utilizado por EDGAR OMAR CORONEL GONZÁLEZ, quien ostenta los derechos de propiedad intelectual sobre el SITIO WEB y los contenidos asociados a la plataforma, entendiendo por este el código fuente que hace posible su funcionamiento, así como las imágenes, archivos de audio o video, logotipos, marcas, combinaciones de colores, estructuras, diseño y demás elementos que lo distinguen. Serán, por consiguiente, protegidas por la legislación mexicana en materia de propiedad intelectual e industrial, así como por los tratados internacionales aplicables. Por consiguiente, queda expresamente prohibida la reproducción, distribución o difusión de los contenidos del SITIO WEB, con fines comerciales, en cualquier soporte y por cualquier medio, sin previa autorización de RAMAZZINI.</p>
+<p>Ni el SUSCRIPTOR ni el USURARIO adquieren ningún derecho de propiedad intelectual por el simple uso o acceso de los SERVICIOS del SITIO WEB y en ningún momento dicho uso será considerado como una autorización o licencia para utilizar los SERVICIOS con fines distintos a los que se contemplan en los presentes TÉRMINOS Y CONDICIONES y a los contratos respectivos.</p>
+<p>El SUSCRIPTOR y el USUARIO se comprometen a respetar los derechos de propiedad intelectual e industrial de RAMAZZINI. No obstante, además de poder visualizar los elementos del SITIO WEB, podrá imprimirlos, copiarlos o almacenarlos, siempre y cuando sea exclusivamente para su uso estrictamente personal.</p>
+<p>En caso de que el USUARIO o algún tercero consideren que cualquiera de los contenidos del SITIO WEB suponga una violación de los derechos de protección de la propiedad industrial o intelectual, deberá comunicarlos inmediatamente a RAMAZZINI, a través de los datos de contacto disponibles en el propio SITIO WEB y/o a través de los siguientes medios:</p>
+<p>Teléfono: 6681702850</p>
+<p>Correo electrónico: <a href="mailto:soporte@ramazzini.app" title="soporte@ramazzini.app">soporte@ramazzini.app</a></p>
+<p>Los días de atención telefónica son de lunes a viernes en un horario de 9:00 am a 5:00 pm.</p>
+<p>PROPIEDAD INTELECTUAL DE TERCEROS. El USUARIO acuerda que las disposiciones que se establecen en este TÉRMINOS Y CONDICIONES, respecto de la titularidad de los derechos de RAMAZZINI, también son aplicables a los derechos de terceros respecto de los SERVICIOS y contenidos de las páginas, dominios o información presentada o vinculado al SITIO WEB.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-x-calidad-de-los-servicios-y-contenidos">CAPÍTULO X. CALIDAD DE LOS SERVICIOS Y CONTENIDOS</h5>
+<p>AMAZZINI hará los esfuerzos razonables para mantener la disponibilidad del SITIO WEB, pero no garantiza que el servicio esté libre de interrupciones. No será responsable por daños indirectos derivados de interrupciones temporales, salvo en caso de dolo o negligencia grave.</p>
+<p>Ni RAMAZZINI, ni sus proveedores o socios comerciales serán responsables de cualquier daño o perjuicio que sufra el CONSUMIDOR a consecuencia de inexactitudes, errores tipográficos, consultas realizadas, asesorías o cambios y mejoras periódicas en los SERVICIOS y contenidos.</p>
+<p>Las recomendaciones y consejos obtenidos a través del SITIO WEB son de naturaleza general, por lo que no deben considerarse determinantes para la toma de decisiones personales o profesionales. Para decisiones específicas, el USUARIO debe consultar a un profesional adecuado.</p>
+<p>BIENES Y SERVICIOS DE TERCEROS ENLAZADOS. El hecho de que se ofrezca información en el SITIO WEB, o en otros ligados o vinculados, no implica la recomendación, garantía, patrocinio o aprobación por parte de RAMAZZINI, respecto de dicha información, bienes y/o servicios. La disponibilidad de bienes y/o servicios ofertados por terceros o sitios ligados o vinculados, no es responsabilidad de RAMAZZINI.</p>
+<br/>
+<p>En vista de lo anterior, RAMAZZINI, no será responsable ante cualquier autoridad de cualquier naturaleza, por cualquier asunto relacionado con la venta, consumo, distribución, entrega, disponibilidad o prestación con respecto de cualquiera de los bienes y/o servicios ofertados por terceros o por sitios ligados o vinculados a través del SITIO WEB.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-xi-responsabilidad-de-ramazzini">CAPÍTULO XI. RESPONSABILIDAD DE RAMAZZINI</h5>
+<p>Ni RAMAZZINI ni sus filiales serán responsables frente al USUARIO en lo relativo a reclamaciones, demandas o acciones legales, independientemente de la naturaleza de la causa de la reclamación, demanda o acción legal, alegando perdida, daños o perjuicios, ya sean directos o indirectos, que puedan producirse por el uso del SITIO WEB, o por la perdida de beneficios, ingresos, contratos, ahorros o cualquier otro tipo de daño directo, indirecto, fortuito, especial o derivado que surja del uso o la incapacidad del SITIO WEB.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-xii-cookies">CAPÍTULO XII. COOKIES</h5>
+<p>El USUARIO que tenga acceso al SITIO WEB, conviene en recibir archivos que le transmitan los servidores de RAMAZZINI. Los archivos pueden contener información tal como la identificación proporcionada por el USUARIO o información para rastrear las páginas que el USUARIO ha visitado. Una Cookie no puede leer los datos o información del disco duro del USUARIO ni leer las Cookies creadas por otros sitios o páginas.</p>
+<p>Se utilizarán Cookies para recabar información sobre el USUARIO, entre ellos su preferencia para la visualización de las páginas en ese servidor, nombre y contraseña.</p>
+<ul>
+<li>Monitoreo del comportamiento del USUARIO en una página de internet.</li>
+<li>Almacenar información sobre la dirección IP.</li>
+<li>Tiempo de duración en una página de Internet.</li>
+<li>Tipo de navegador que utiliza el USUARIO.</li>
+</ul>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-xiii-confidencialidad">CAPÍTULO XIII. CONFIDENCIALIDAD</h5>
+<p>RAMAZZINI, se obliga a mantener confidencial la información que reciba del USUARIO que tenga dicho carácter conforme a las disposiciones legales aplicables, en la República Mexicana. RAMAZZINI no asume ninguna obligación de mantener confidencial cualquier otra información que el USUARIO le proporcione directa o indirectamente de su persona propia o de un tercero, ya sea al inscribirse al SITIO WEB o en cualquier otro momento posterior, incluyendo aquella información que el USUARIO proporcione a través de boletines, pizarras o platica en línea (chats); así como, la información que obtenga RAMAZZINI a través de las cookies que se describen en el capítulo VII.</p>
+<p>Mediante el uso del SITIO WEB, el USUARIO autoriza a RAMAZZINI, a sus filiales, socios comerciales y demás personas interesadas a utilizar, publicar, reproducir, comunicar y transmitir la información no confidencial o no individual, en términos de lo establecido en el artículo 109 de la Ley Federal de los Derechos de Autor y de la fracción I del artículo 76 bis de la Ley Federal de Protección al Consumidor.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-xiv-aviso-de-privacidad-de-datos-personales">CAPÍTULO XIV. AVISO DE PRIVACIDAD DE DATOS PERSONALES</h5>
+<p>De acuerdo con lo previsto en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, EDGAR OMAR CORONEL GONZÁLEZ, quien opera bajo el nombre comercial RAMAZZINI, declara tener su domicilio en Ángel Flores No. 1937 Norte, Fraccionamiento Las Fuentes, Ahome, Sinaloa, C.P. 81223, México. Asimismo, manifiesta ser el responsable del tratamiento de los DATOS PERSONALES del CONSUMIDOR</p>
+<p>Teléfono: 6681702850</p>
+<p>Correo electrónico: <a href="mailto:soporte@ramazzini.app" title="soporte@ramazzini.app">soporte@ramazzini.app</a></p>
+<p>Los días de atención telefónica son de lunes a viernes en un horario de 9:00 am a 5:00 pm.</p>
+<p>FINALIDADES PRIMARIAS. Los DATOS PERSONALES que recaba RAMAZZINI del USUARIO, se utilizaran para las siguientes finalidades que son necesarias para los SERVICIOS que solicita:</p>
+<ol class="letras">
+<li>Fines Fiscales</li>
+<li>Fines Científicos</li>
+<li>Fines Económicos</li>
+<li>Fines Personales</li>
+<li>Fines Educativos</li>
+</ol>
+<p>FORMAS DE RECABAR LOS DATOS PERSONALES". Para los SERVICIOS señalados en el presente TÉRMINOS Y CONDICIONES, RAMAZZINI se encuentra acreditado para recabar los DATOS PERSONALES de distintas formas cuando el USUARIO lo proporciona directamente a RAMAZZINI; cuando visita el SITIO WEB, o utiliza nuestros SERVICIOS en línea, y cuando obtenemos información a través de otras fuentes que están permitidas por la ley.</p>
+<p>DATOS PERSONALES QUE SE RECABAN DE FORMA DIRECTA. Los DATOS PERSONALES recaudados de forma directa cuando el USUARIO los proporciona a RAMAZZINI:</p>
+<ol>
+<li>Correo electrónico</li>
+<li>Nombre completo</li>
+<li>Teléfono</li>
+<li>Domicilio</li>
+<li>RFC</li>
+<li>CURP</li>
+<li>Datos patrimoniales</li>
+<li>Datos fiscales</li>
+<li>Datos bancarios</li>
+</ol>
+<br/>
+<p>DATOS PERSONALES QUE RECABAMOS CUANDO VISITA NUESTRO SITIO WEB O UTILIZA LOS SERVICIOS EN LINEA. Tales como:</p>
+<ol>
+<li>Correo electrónico</li>
+<li>Nombre completo</li>
+<li>Teléfono</li>
+<li>Domicilio</li>
+<li>RFC</li>
+<li>CURP</li>
+<li>Datos patrimoniales</li>
+<li>Datos fiscales</li>
+<li>Datos bancarios</li>
+</ol>
+<br/>
+<p>DATOS PERSONALES RECABADOS A TRAVÉS DE OTRAS FUENTES PERMITIDAS POR LA LEY.</p>
+<ul>
+<li>USO DE DATOS SENSIBLES. - Se consideran datos sensibles aquellos que afecten a la esfera más íntima de su titular, o cuya utilización indebida pueda dar origen a discriminación o conlleve a un riesgo grave para éste.</li>
+<li> USO DE (SSL). - La seguridad y la confidencialidad de los datos que el USUARIO proporcione al contratar un servicio, estarán protegidos por un servidor seguro bajo el protocolo Secure Socket Layer (SSL), de tal forma que los datos enviados se transmitirán encriptados para asegurar su resguardo.</li>
+</ul>
+<p>Para verificar que se encuentra en un entorno protegido el USUARIO debe de asegurarse que aparezca una S en la barra de navegación.</p>
+<p>Sin embarco y a pesar de contar con herramientas seguras para la protección de los datos enviados a través de internet, no se puede garantizar al 100%.</p>
+<p>ACEPTACIÓN Y CONSENTIMIENTO. Como USUARIO del SITIO WEB, declara haber sido informado de las condiciones sobre protección de datos de carácter personal, acepta y consiente el tratamiento de los mismos por parte de RAMAZZINI en la forma y para las finalidades indicadas en esta política de TÉRMINOS Y CONDICIONES.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-xv-derechos-arco">CAPÍTULO XV. DERECHOS ARCO</h5>
+<p>El USUARIO tiene derecho de acceder a sus DATOS PERSONALES que RAMAZZINI posee y a los detalles del tratamiento de los mismos, así como a rectificarlos en caso de ser inexactos o incompletos; cancelarlos cuando considere que no se requieren para alguna de las finalidades señaladas en el presente TÉRMINOS Y CONDICIONES, estén siendo utilizados para finalidades no consentidas o haya finalizado la relación contractual o de servicio, o bien oponerse al tratamiento de los mismos para fines específicos.</p>
+<p>PROCEDIMIENTO. Los mecanismos que se han implementados para el ejercicio de dichos derechos, los cuales se conocen como DERECHOS ARCO que se refieren a la rectificación, cancelación, y oposición del titular respecto al tratamiento de sus DATOS PERSONALES.</p>
+<ol class="terms-list-numbers">
+<li>Presentación de la solicitud respectiva a los DERECHOS ARCO, en el domicilio de la oficina de privacidad, mismo que fue debidamente señalado en el capítulo X del presente.</li>
+<li>La solicitud debe de contener la siguiente información:
+            <ol class="terms-list-roman">
+<li>Nombre del titular de los datos personales</li>
+<li>Domicilio</li>
+<li>Teléfono</li>
+<li>Documentos que acrediten su personalidad e identidad</li>
+</ol>
+</li>
+<li>El plazo para atender su solicitud es de: 30 días.</li>
+</ol>
+<p>Si el USUARIO considera que su derecho de protección de DATOS PERSONALES ha sido lesionado por alguna conducta, actuación o respuesta por parte de RAMAZZINI, presume que en el tratamiento de sus DATOS PERSONALES existe alguna violación a las disposiciones previstas en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, podrá interponer la queja o denuncia correspondiente ante el INAI.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-xvi-modificaciones-a-los-terminos-y-condiciones">CAPÍTULO XVI. MODIFICACIONES A LOS TÉRMINOS Y CONDICIONES</h5>
+<p>RAMAZZINI se reserva el derecho de efectuar en cualquier momento modificaciones o actualizaciones al presente TÉRMINOS Y CONDICIONES, para la atención de novedades legislativas, políticas internas o nuevos requerimientos para la prestación u ofrecimiento de nuestros SERVICIOS.</p>
+<p>Por lo que se obliga a mantener actualizado el presente, para su consulta. Esto con el fin de que el USUARIO se encuentre en posibilidad de ejercer sus DERECHOS ARCO, y de esta forma mantenerlo al tanto de cualquier modificación mediante aviso al último correo electrónico que el USUARIO haya proporcionado.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-xvii-autorizacion-de-cargo-recurrente">CAPÍTULO XVII. AUTORIZACIÓN DE CARGO RECURRENTE</h5>
+<p>El USUARIO que haya registrado su tarjeta para la efectuación del pago, acepta y autoriza por este medio, que mientras la cuenta continue activa se realizara el cargo correspondiente a la mensualidad del servicio a la tarjeta registrada. </p>
+<p>El USUARIO acepta y autoriza que en caso de que se rechace el pago programado por Fondos insuficientes, se intentara realizar el cobro nuevamente hasta que se vea reflejado el pago, entendiendo que durante el tiempo que el pago no se vea reflejado la cuenta permanecerá inactiva en nuestro sistema.</p>
+<p>Esta autorización estará vigente hasta que se notifique a RAMAZZINI el aviso de revocación, dicha notificando deberá realizarse con 30 días de anticipación a la fecha en que deba efectuarse el cargo para evitar el mismo.</p>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-xviii-de-los-productos">CAPÍTULO XVIII. DE LOS PRODUCTOS</h5>
+<p>Son los esquemas bajo los cuales el SUSCRIPTOR podrá contratar los Servicio(s) mismos que se describen: </p>
+<p>Plan Básico Incluye:</p>
+<ol>
+<li>Historias Clínicas al Mes: 50 disponibles</li>
+<li>Acceso ilimitado a todas las funcionalidades y herramientas de la plataforma web, interfaz de usuario completa y panel de administración</li>
+</ol>
+<p>Plan Profesional Incluye:</p>
+<ol>
+<li>Historias Clínicas al Mes: 300 disponibles</li>
+<li>Acceso ilimitado a todas las funcionalidades y herramientas de la plataforma web, interfaz de usuario completa y panel de administración</li>
+</ol>
+<p>Plan Empresarial Incluye:</p>
+<ol>
+<li>Historias Clínicas al Mes: 600 disponibles</li>
+<li>Acceso ilimitado a todas las funcionalidades y herramientas de la plataforma web, interfaz de usuario completa y panel de administración</li>
+</ol>
+<p>Recursos adicionales</p>
+<p>El SUSCRIPTOR tendrá la opción de agregar historias clínicas adicionales al plan contratado, bajo las siguientes condiciones:</p>
+<ul>
+<li>Historias clínicas adicionales estarán sujetos a un costo adicional por cada veinticinco Historias Clínicas extra.</li>
+<li>Los costos de los recursos adicionales serán determinados y publicados en el SITIO WEB.</li>
+<li>Los recursos adicionales se sumarán a los disponibles en el plan contratado y estarán sujetos a las mismas condiciones de uso.</li>
+</ul>
+</section>
+<section class="terms-section">
+<h5 id="capitulo-xix-leyes-aplicables-y-jurisdiccion">CAPÍTULO XIX. LEYES APLICABLES Y JURISDICCION</h5>
+<p>Para la interpretación, cumplimiento y ejecución de los presentes TÉRMINOS Y CONDICIONES, el USUARIO, está de acuerdo en que serán aplicables las leyes Federales de los Estados Unidos Mexicanos y competentes los tribunales de la Ciudad de Los Mochis, Sinaloa, México, renunciando expresamente a cualquier otro fuero o jurisdicción que pudiera corresponderles en razón de sus domicilios presentes o futuros o por cualquier otra causa.</p>
+<p>RAMAZZINI, se reserva la facultad de presentar las acciones civiles o penales que considere necesarias por la utilización indebida del SITIO WEB, sus contenidos, productos o SERVICIOS, o por el incumplimiento de los presentes TÉRMINOS Y CONDICIONES.</p>
+<p>RAMAZZINI es un nombre comercial utilizado por EDGAR OMAR CORONEL GONZÁLEZ en el ejercicio de su actividad profesional, quien actúa conforme a las leyes aplicables en México y cuenta con la capacidad legal para estipular lo aquí establecido.</p>
+</section>
+`;
+
+export default function TermsPage() {
+  return (
+    <main className="legal-page">
+      <header className="legal-header">
+        <div className="container legal-nav">
+          <Link
+            href="/"
+            className="legal-brand"
+            aria-label="Volver al inicio de Ramazzini"
+          >
+            <Image
+              src="/RamazziniLogoClaroNoBg.png"
+              alt="Ramazzini"
+              width={521}
+              height={140}
+              priority
+            />
+          </Link>
+          <Link href="/" className="button button-secondary">
+            Volver al inicio
+          </Link>
+        </div>
+      </header>
+
+      <section className="container legal-hero">
+        <span className="eyebrow">Documento legal</span>
+        <h1>Términos y Condiciones</h1>
+        <p>
+          Consulta las condiciones aplicables al uso de Ramazzini, sus
+          servicios, tratamiento de información y políticas relacionadas con la
+          plataforma.
+        </p>
+      </section>
+
+      <section
+        className="container legal-layout"
+        aria-label="Términos y condiciones de Ramazzini"
+      >
+        <aside className="legal-index" aria-label="Índice del documento">
+          <span>Contenido</span>
+          <a href="#capitulo-i-definiciones">Definiciones</a>
+          <a href="#capitulo-viii-politica-de-cancelacion-y-devolucion">
+            Cancelación y devolución
+          </a>
+          <a href="#capitulo-xiv-aviso-de-privacidad-de-datos-personales">
+            Privacidad
+          </a>
+          <a href="#capitulo-xv-derechos-arco">Derechos ARCO</a>
+          <a href="#capitulo-xviii-de-los-productos">Productos</a>
+        </aside>
+        <article
+          className="legal-card"
+          dangerouslySetInnerHTML={{ __html: termsHtml }}
+        />
+      </section>
+    </main>
+  );
+}
