@@ -720,7 +720,7 @@ img {
   border-radius: 8px;
   padding: 10px;
   overflow: hidden;
-  background: #f5f7f9;
+  background: #ffffff;
   transition:
     transform 220ms ease,
     border-color 220ms ease,
@@ -740,7 +740,6 @@ img {
   max-width: min(180px, 108%);
   max-height: 86px;
   object-fit: contain;
-  transform: scale(1.12);
 }
 
 .section-head {
@@ -1171,7 +1170,6 @@ p {
   max-width: 136px;
   max-height: 52px;
   object-fit: contain;
-  transform: scale(1.16);
 }
 
 .quote-mark {

@@ -119,48 +119,64 @@ const brandLogos = [
     src: "/marcas-testimonio/prevensa-logo.png",
     width: 500,
     height: 500,
+    scale: 1.32,
+    testimonialScale: 1.9,
   },
   {
     name: "Médica Ocupacional Caborca",
     src: "/marcas-testimonio/moc-caborca-logo.png",
     width: 745,
     height: 745,
+    scale: 1.32,
+    testimonialScale: 1.7,
   },
   {
     name: "Asesoría Médico Empresarial de Sinaloa",
     src: "/marcas-testimonio/asesoria-medico-empresarial-de-sinaloa-logo.png",
     width: 500,
     height: 500,
+    scale: 1.12,
+    testimonialScale: 1.16,
   },
   {
     name: "Servicios de Medicina del Trabajo Dra. Rebeca Melamed",
     src: "/marcas-testimonio/dra-rebeca-melamed-servicios-de-medicina-del-trabajo-logo.png",
     width: 900,
     height: 281,
+    scale: 1.22,
+    testimonialScale: 1.15,
   },
   {
     name: "Centro de Diagnóstico CEDIP",
     src: "/marcas-testimonio/centro-de-diagnostico-cedip-sa-logo.png",
     width: 500,
     height: 500,
+    scale: 1.32,
+    testimonialScale: 1.3,
   },
   {
     name: "Consultorio Dr. González",
     src: "/marcas-testimonio/consultorio-dr-gonzalez-logo.png",
     width: 500,
     height: 500,
+    scale: 1.32,
+    testimonialScale: 1.16,
   },
   {
     name: "Dr. Senén Cabrera Sampayo",
     src: "/marcas-testimonio/dr-senen-cabrera-sampayo-logo.jpg",
     width: 500,
     height: 500,
+    scale: 1.5,
+    testimonialScale: 1.16,
   },
   {
     name: "Neuromedical SA",
     src: "/marcas-testimonio/neuromedical-sa-logo.jpeg",
     width: 500,
     height: 500,
+    scale: 1.12,
+    testimonialScale: 1.16,
   },
 ];
 
@@ -674,6 +690,7 @@ export default function Home() {
                   width={brand.width}
                   height={brand.height}
                   sizes="(max-width: 640px) 44vw, 180px"
+                  style={{ transform: `scale(${brand.scale})` }}
                 />
               </div>
             ))}
@@ -976,6 +993,9 @@ export default function Home() {
                       width={testimonial.logo.width}
                       height={testimonial.logo.height}
                       sizes="130px"
+                      style={{
+                        transform: `scale(${testimonial.logo.testimonialScale})`,
+                      }}
                     />
                   </span>
                 </div>
@@ -1540,7 +1560,10 @@ function Footer() {
             <strong>+36k</strong> informes generados
           </span>
           <span>
-            <strong>+7k</strong> trabajadores gestionados
+            <strong>+7k</strong> trab. gestionados
+          </span>
+          <span>
+            <strong>+250</strong> empresas atendidas
           </span>
           <span>
             <strong>MX</strong> hecho en México

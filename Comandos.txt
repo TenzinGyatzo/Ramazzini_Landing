@@ -21,3 +21,9 @@ scp assets/img/estadisticas.svg root@207.126.167.114:/var/www/landing/assets/img
 scp assets/img/perfil.jpeg root@207.126.167.114:/var/www/landing/assets/img
 
 scp forms/contact.php root@207.126.167.114:/var/www/landing/forms/contact.php
+
+# Pull directamente en el VPS para obtener cambios desde GitHub
+cd /var/www/ramazzini-landing
+git pull --ff-only origin main
+npm run build
+pm2 restart ramazzini-landing --update-env
