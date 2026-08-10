@@ -82,10 +82,13 @@ export async function POST(request: NextRequest) {
       timeZone: "America/Mazatlan",
     }).format(new Date());
 
-    const profile = readField(lead, "profile") || "No capturado";
-    const volume = readField(lead, "volume") || "No capturado";
-    const message =
-      readField(lead, "message") || "Sin comentarios adicionales.";
+    const profile = readField(lead, "profile");
+    const volume = readField(lead, "volume");
+    const message = readField(lead, "message");
+    const formOriginLabel =
+      source === "Hero video lead"
+        ? "Formulario compacto"
+        : "Formulario completo";
     const bookingUrl =
       process.env.NEXT_PUBLIC_CAL_URL ||
       "https://cal.com/ramazzini/demo-personalizada-de-ramazzini";
@@ -95,18 +98,83 @@ export async function POST(request: NextRequest) {
         from,
         to: notifyTo,
         replyTo: email,
-        subject: `Nueva demo Ramazzini - ${name}`,
+        subject: `Nuevo prospecto interesado en una demo: ${name}`,
         html: `
-            <div style="font-family:Arial,sans-serif;color:#0b1326;line-height:1.5">
-              <h1>Nueva solicitud de demo</h1>
-              <p><strong>Nombre:</strong> ${escapeHtml(name)}</p>
-              <p><strong>Correo:</strong> ${escapeHtml(email)}</p>
-              <p><strong>WhatsApp:</strong> ${escapeHtml(phone)}</p>
-              <p><strong>Perfil:</strong> ${escapeHtml(profile)}</p>
-              <p><strong>Volumen:</strong> ${escapeHtml(volume)}</p>
-              <p><strong>Mensaje:</strong> ${escapeHtml(message)}</p>
-              <p><strong>Fecha:</strong> ${escapeHtml(submittedAt)}</p>
-            </div>
+            <!DOCTYPE html>
+            <html lang="es">
+              <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Nuevo prospecto interesado en una demo</title>
+                <style>
+                  @media only screen and (max-width: 600px) {
+                    .email-heading {
+                      font-size: 22px !important;
+                      line-height: 1.3 !important;
+                    }
+                    .email-container {
+                      width: 100% !important;
+                    }
+                    .email-body {
+                      padding: 28px 20px !important;
+                    }
+                  }
+                </style>
+              </head>
+              <body style="margin:0;padding:0;background-color:#f4f6f8;">
+                <div style="display:none;font-size:1px;color:#f4f6f8;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
+                  ${escapeHtml(name)} compartió sus datos desde el ${escapeHtml(formOriginLabel)}.
+                </div>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f6f8;margin:0;padding:24px 12px;">
+                  <tr>
+                    <td align="center">
+                      <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:#ffffff;border:1px solid #e3e8ef;border-radius:8px;">
+                        <tr>
+                          <td class="email-body" style="padding:36px 32px;font-family:Arial,Helvetica,sans-serif;color:#0b1326;font-size:16px;line-height:1.5;">
+                            <p style="margin:0 0 12px;">
+                              <span style="display:inline-block;padding:6px 10px;border-radius:999px;background-color:#eef8eb;border:1px solid #cfe9c8;color:#2f6b2a;font-size:12px;font-weight:700;line-height:1;">
+                                ${escapeHtml(formOriginLabel)}
+                              </span>
+                            </p>
+                            <h1 class="email-heading" style="margin:0 0 16px;font-family:Arial,Helvetica,sans-serif;font-size:26px;line-height:1.3;font-weight:700;color:#0b1326;">
+                              Nuevo prospecto interesado en una demo
+                            </h1>
+                            <p style="margin:0 0 20px;color:#0b1326;">
+                              Un prospecto compartió sus datos para continuar con el proceso de agendar una demo de Ramazzini.
+                            </p>
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 28px;background-color:#f3faf7;border:1px solid #d7ebe3;border-radius:8px;">
+                              <tr>
+                                <td style="padding:14px 16px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#355a52;">
+                                  Este envío no confirma que exista una reservación. Si el prospecto elige y confirma un horario, recibirás la notificación correspondiente de Cal.com.
+                                </td>
+                              </tr>
+                            </table>
+                            <h2 style="margin:0 0 12px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.4;font-weight:700;color:#015e66;text-transform:uppercase;letter-spacing:0.04em;">
+                              Datos del prospecto
+                            </h2>
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 28px;border-top:1px solid #e3e8ef;">
+                              ${emailDataRow("Nombre", name)}
+                              ${emailDataRow("Correo electrónico", email)}
+                              ${emailDataRow("WhatsApp", phone)}
+                              ${emailDataRow("Perfil", profile)}
+                              ${emailDataRow("Volumen mensual", volume)}
+                              ${emailDataRow("Mensaje", message)}
+                            </table>
+                            <h2 style="margin:0 0 12px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.4;font-weight:700;color:#015e66;text-transform:uppercase;letter-spacing:0.04em;">
+                              Información del envío
+                            </h2>
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0;border-top:1px solid #e3e8ef;">
+                              ${emailDataRow("Formulario de origen", formOriginLabel)}
+                              ${emailDataRow("Formulario enviado", submittedAt)}
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </body>
+            </html>
           `,
       }),
       resend.emails.send({
@@ -114,13 +182,82 @@ export async function POST(request: NextRequest) {
         to: email,
         subject: "Recibimos tu solicitud de demo de Ramazzini",
         html: `
-            <div style="font-family:Arial,sans-serif;color:#0b1326;line-height:1.6;max-width:640px">
-              <h1>Hola ${escapeHtml(name)}, gracias por escribirnos.</h1>
-              <p>Recibimos tus datos para preparar una demo personalizada de 45 minutos.</p>
-              <p>Si todavía no elegiste horario, puedes reservar tu fecha aquí: <a href="${escapeHtml(bookingUrl)}">${escapeHtml(bookingUrl)}</a></p>
-              <p>También puedes iniciar tu prueba gratuita aquí: <a href="${escapeHtml(appUrl)}">${escapeHtml(appUrl)}</a></p>
-              <p>Nos vemos pronto,<br/>Equipo Ramazzini</p>
-            </div>
+            <!DOCTYPE html>
+            <html lang="es">
+              <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Recibimos tu solicitud de demo de Ramazzini</title>
+                <style>
+                  @media only screen and (max-width: 600px) {
+                    .email-heading {
+                      font-size: 23px !important;
+                      line-height: 1.3 !important;
+                    }
+                    .email-container {
+                      width: 100% !important;
+                    }
+                    .email-body {
+                      padding: 28px 20px !important;
+                    }
+                  }
+                </style>
+              </head>
+              <body style="margin:0;padding:0;background-color:#f4f6f8;">
+                <div style="display:none;font-size:1px;color:#f4f6f8;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
+                  Recibimos tus datos. Elige el horario que mejor te funcione para conocer Ramazzini.
+                </div>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f6f8;margin:0;padding:24px 12px;">
+                  <tr>
+                    <td align="center">
+                      <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:#ffffff;border:1px solid #e3e8ef;border-radius:8px;">
+                        <tr>
+                          <td class="email-body" style="padding:40px 36px;font-family:Arial,Helvetica,sans-serif;color:#0b1326;font-size:16px;line-height:1.5;">
+                            <h1 class="email-heading" style="margin:0 0 24px;font-family:Arial,Helvetica,sans-serif;font-size:27px;line-height:1.3;font-weight:700;color:#0b1326;">
+                              Gracias por tu interés en Ramazzini
+                            </h1>
+                            <p style="margin:0 0 16px;">Hola, ${escapeHtml(name)}:</p>
+                            <p style="margin:0 0 16px;">
+                              Recibimos tus datos y tu interés en conocer Ramazzini.
+                            </p>
+                            <p style="margin:0 0 24px;">
+                              Si todavía no has elegido una fecha y hora, completa la reservación de tu demo personalizada de 45 minutos:
+                            </p>
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px;">
+                              <tr>
+                                <td align="center" bgcolor="#97d68b" style="border-radius:8px;background-color:#97d68b;">
+                                  <a href="${escapeHtml(bookingUrl)}" style="display:inline-block;padding:14px 28px;font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;line-height:1.25;color:#06240a;text-decoration:none;border-radius:8px;min-width:180px;text-align:center;">
+                                    Agendar mi demo
+                                  </a>
+                                </td>
+                              </tr>
+                            </table>
+                            <p style="margin:0 0 16px;">
+                              Si ya confirmaste un horario, no necesitas volver a agendar. Recibirás los detalles de tu reservación por separado.
+                            </p>
+                            <p style="margin:0 0 12px;">
+                              Mientras tanto, si deseas conocer Ramazzini por tu cuenta, puedes comenzar una prueba gratuita de 15 días.
+                            </p>
+                            <p style="margin:0 0 24px;">
+                              <a href="${escapeHtml(appUrl)}" style="color:#015e66;font-size:16px;font-weight:600;text-decoration:underline;">
+                                Comenzar prueba gratuita
+                              </a>
+                            </p>
+                            <p style="margin:0 0 24px;">
+                              Nos dará gusto mostrarte cómo Ramazzini puede ayudarte a gestionar exámenes médicos laborales con mayor rapidez, orden y consistencia.
+                            </p>
+                            <p style="margin:0 0 28px;">Equipo Ramazzini</p>
+                            <p style="margin:0;padding-top:20px;border-top:1px solid #e3e8ef;font-size:13px;line-height:1.5;color:#5b677a;">
+                              Recibiste este correo porque compartiste tus datos para conocer Ramazzini y agendar una demo.
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </body>
+            </html>
           `,
       }),
     ]);
@@ -195,4 +332,23 @@ function escapeHtml(value: string) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function emailDataRow(label: string, value: string) {
+  if (!value) {
+    return "";
+  }
+
+  return `
+    <tr>
+      <td style="padding:12px 0;border-bottom:1px solid #e3e8ef;font-family:Arial,Helvetica,sans-serif;">
+        <div style="font-size:12px;line-height:1.4;color:#5b677a;margin:0 0 4px;">
+          ${escapeHtml(label)}
+        </div>
+        <div style="font-size:16px;line-height:1.5;color:#0b1326;font-weight:600;">
+          ${escapeHtml(value)}
+        </div>
+      </td>
+    </tr>
+  `;
 }

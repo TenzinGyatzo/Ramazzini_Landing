@@ -27,3 +27,4 @@ cd /var/www/ramazzini-landing
 git pull --ff-only origin main
 npm run build
 pm2 restart ramazzini-landing --update-env
+
