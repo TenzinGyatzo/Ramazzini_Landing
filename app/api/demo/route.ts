@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     return redirectToThanks(request, "error");
   }
 
-  if (String(lead.website || "").trim()) {
+  if (String(lead.form_confirm || "").trim()) {
     return redirectToThanks(request, "enviado");
   }
 

@@ -581,8 +581,8 @@ export default function Home() {
             .replaceAll("<", "\\u003c")
             .replaceAll(">", "\\u003e")
             .replaceAll("&", "\\u0026")
-            .replaceAll(" ", "\\u2028")
-            .replaceAll(" ", "\\u2029"),
+            .replaceAll("", "\\u2028")
+            .replaceAll("", "\\u2029"),
         }}
       />
       <Header />
@@ -1253,9 +1253,11 @@ function QuickLeadForm() {
       <input
         className="form-honeypot"
         type="text"
-        name="website"
+        name="form_confirm"
         tabIndex={-1}
-        autoComplete="off"
+        autoComplete="new-password"
+        data-lpignore="true"
+        data-1p-ignore="true"
         aria-hidden="true"
       />
       <button className="button button-primary" type="submit">
