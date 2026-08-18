@@ -130,9 +130,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es-MX" className={kanit.variable}>
+    <html lang="es-MX" className={kanit.variable} suppressHydrationWarning>
       {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
-      <body>
+      <body suppressHydrationWarning>
         {gtmId ? (
           <noscript>
             <iframe

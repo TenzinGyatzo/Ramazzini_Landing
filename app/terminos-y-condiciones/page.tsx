@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Consulta los términos y condiciones de uso y privacidad de Ramazzini.",
   alternates: {
-    canonical: "/terminos-y-condiciones",
+    canonical: "/terminos-y-condiciones/",
   },
   robots: {
     index: true,

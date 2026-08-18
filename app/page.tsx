@@ -19,6 +19,9 @@ import {
   ShieldCheck,
   Upload,
 } from "lucide-react";
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
+import { IsoMark } from "./components/IsoMark";
 import { ScreensShowcase } from "./components/ScreensShowcase";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://get.ramazzini.app";
@@ -32,7 +35,6 @@ const supportEmail =
 const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || "";
 const logoUrl = `${siteUrl}/RamazziniLogoClaroNoBg.png`;
 const screenshotUrl = `${siteUrl}/social-preview.jpg`;
-const phoneHref = contactPhone.replace(/[^\d+]/g, "");
 
 const benefits = [
   {
@@ -321,6 +323,39 @@ const faqs = [
   ],
 ];
 
+const occupationalResources = [
+  {
+    href: "/software-salud-ocupacional/",
+    title: "Software de salud ocupacional",
+    text: "Qué debe tener una plataforma especializada.",
+  },
+  {
+    href: "/expediente-medico-laboral/",
+    title: "Expediente médico laboral",
+    text: "Cómo organizar el historial del trabajador.",
+  },
+  {
+    href: "/aptitud-medica-laboral/",
+    title: "Aptitud médica laboral",
+    text: "Cómo se determina la conclusión sobre el puesto.",
+  },
+  {
+    href: "/examen-medico-laboral/",
+    title: "Examen médico laboral",
+    text: "Qué evalúa y cómo documentarlo.",
+  },
+  {
+    href: "/vigilancia-de-la-salud-de-los-trabajadores/",
+    title: "Vigilancia de la salud de los trabajadores",
+    text: "Seguimiento de la población trabajadora.",
+  },
+  {
+    href: "/certificacion-nom-024-ssa3-2012/",
+    title: "Certificación NOM-024-SSA3-2012",
+    text: "Qué implica la norma y su evaluación.",
+  },
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -593,10 +628,10 @@ export default function Home() {
               className="eyebrow hero-reveal"
               style={{ animationDelay: "0ms" }}
             >
-              <HeartPulse size={16} /> Software para médicos ocupacionales
+              <HeartPulse size={16} /> Software de salud ocupacional
             </span>
             <h1 className="hero-reveal" style={{ animationDelay: "120ms" }}>
-              Exámenes médicos laborales listos en minutos
+            El programa para realizar exámenes médicos laborales que agiliza tu operación en minutos.
             </h1>
             <p
               className="hero-copy hero-reveal"
@@ -703,12 +738,21 @@ export default function Home() {
         >
           <h2 className="aeo-question">¿Qué es Ramazzini?</h2>
           <p className="aeo-answer">
-            <strong>Ramazzini</strong> es un software web especializado en salud
-            ocupacional que te permite realizar exámenes médicos laborales,
-            organizar expedientes por empresa y trabajador, y generar informes
-            PDF con la imagen de tu organización. Funciona desde cualquier
-            navegador, sin instalación, y centraliza toda tu operación en un
-            solo lugar. Pruébalo gratis durante 15 días, sin tarjeta.
+            <strong>Ramazzini</strong> es un software de salud ocupacional
+            y medicina laboral para médicos, clínicas y servicios médicos de empresa. 
+            Permite realizar{" "}
+            <a className="guide-inline-link" href="/examen-medico-laboral/">
+              exámenes médicos laborales
+            </a>
+            , organizar expedientes por empresa
+            centro de trabajo y trabajador, y generar informes profesionales en PDF.
+            Funciona desde cualquier navegador, sin instalación, y centraliza toda
+            tu operación en un solo lugar. Pruébalo gratis durante 15 días, sin tarjeta.
+          </p>
+          <p className="aeo-more">
+            <a href="/software-salud-ocupacional/">
+              Conoce más sobre el software de salud ocupacional
+            </a>
           </p>
         </section>
 
@@ -764,7 +808,7 @@ export default function Home() {
           <IsoMark className="section-sigil section-sigil-right" />
           <div className="section-head center">
             <span className="section-kicker">Problema y solución</span>
-            <h2>¿Te suena familiar?</h2>
+            <h2>¿Todavía gestionas exámenes médicos laborales en Word, Excel o sistemas poco especializados?</h2>
             <p className="lead">
               Ya sea que trabajes con Word, Excel y carpetas dispersas, o con un
               sistema complicado y poco amigable, Ramazzini te permite gestionar
@@ -835,7 +879,8 @@ export default function Home() {
           <IsoMark className="section-sigil section-sigil-left" />
           <div className="section-head center">
             <span className="section-kicker">Flujo de trabajo</span>
-            <h2>Realiza y entrega tus exámenes médicos en tres pasos</h2>
+            <h2>Cómo funciona Ramazzini para realizar exámenes médicos laborales</h2>
+            <p>El proceso se divide en tres pasos: captura la evaluación, organiza automáticamente el expediente y genera los informes listos para entregar.</p>
           </div>
           <div className="steps">
             <Step
@@ -846,7 +891,18 @@ export default function Home() {
             <Step
               n="2"
               title="Organiza automáticamente"
-              text="Cada documento se integra en el expediente correspondiente, organizado por empresa, centro, trabajador y año."
+              text={
+                <>
+                  Cada documento se integra en{" "}
+                  <a
+                    className="guide-inline-link"
+                    href="/expediente-medico-laboral/"
+                  >
+                    el expediente correspondiente
+                  </a>
+                  , organizado por empresa, centro, trabajador y año.
+                </>
+              }
             />
             <Step
               n="3"
@@ -1077,10 +1133,52 @@ export default function Home() {
             {faqs.map(([question, answer]) => (
               <details key={question}>
                 <summary>{question}</summary>
-                <p>{answer}</p>
+                <p>
+                  {question.includes("NOM-024-SSA3-2012") ? (
+                    <>
+                      Ramazzini estará certificado pronto. La plataforma ya
+                      cumple con los requisitos aplicables y actualmente se
+                      encuentra en proceso formal de verificación. Una vez
+                      obtenida la{" "}
+                      <a
+                        className="guide-inline-link"
+                        href="/certificacion-nom-024-ssa3-2012/"
+                      >
+                        certificación NOM-024-SSA3-2012
+                      </a>
+                      , lo anunciaremos a través de esta página y de los medios
+                      oficiales de Ramazzini.
+                    </>
+                  ) : (
+                    answer
+                  )}
+                </p>
               </details>
             ))}
           </div>
+        </section>
+
+        <section
+          className="section container"
+          id="recursos"
+          aria-label="Recursos de salud ocupacional"
+        >
+          <div className="section-head center">
+            <span className="section-kicker">Guías</span>
+            <h2>Recursos de salud ocupacional</h2>
+            <p className="lead">
+              Guías prácticas sobre evaluación, expedientes, aptitud y vigilancia
+              de la salud en el trabajo.
+            </p>
+          </div>
+          <ul className="home-resources">
+            {occupationalResources.map((item) => (
+              <li key={item.href}>
+                <a href={item.href}>{item.title}</a>
+                <p>{item.text}</p>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section className="section container section-with-sigil" id="demo">
@@ -1136,35 +1234,6 @@ export default function Home() {
         <Image src="/whatsapp-logo.svg" alt="" width={30} height={30} />
       </a>
     </div>
-  );
-}
-
-function Header() {
-  return (
-    <header className="nav">
-      <div className="container nav-inner">
-        <a className="brand" href="#" aria-label="Ramazzini">
-          <Image
-            src="/RamazziniLogoClaroNoBg.png"
-            alt="Ramazzini"
-            width={521}
-            height={140}
-            priority
-          />
-        </a>
-        <nav className="nav-links" aria-label="Navegación principal">
-          <a href="#como-funciona">Cómo funciona</a>
-          <a href="#caracteristicas">Funciones</a>
-          <a href="#casos">Testimonios</a>
-          <a href="#precios">Precios</a>
-        </nav>
-        <div className="nav-actions">
-          <a className="button button-primary" href="#demo">
-            Agendar demo
-          </a>
-        </div>
-      </div>
-    </header>
   );
 }
 
@@ -1267,14 +1336,6 @@ function QuickLeadForm() {
   );
 }
 
-function IsoMark({ className = "" }: { className?: string }) {
-  return (
-    <span className={`iso-mark ${className}`} aria-hidden="true">
-      <Image src="/brand/ramazzini-brand.svg" alt="" width={420} height={420} />
-    </span>
-  );
-}
-
 function Trust({
   icon,
   value,
@@ -1323,7 +1384,15 @@ function ProblemCard({
   );
 }
 
-function Step({ n, title, text }: { n: string; title: string; text: string }) {
+function Step({
+  n,
+  title,
+  text,
+}: {
+  n: string;
+  title: string;
+  text: ReactNode;
+}) {
   return (
     <article className="card">
       <IsoMark className="card-sigil" />
@@ -1487,101 +1556,3 @@ function DemoForm() {
   );
 }
 
-function Footer() {
-  const waMessage = encodeURIComponent(
-    "Hola, vi la pagina de Ramazzini y me gustaria agendar una demo del sistema.",
-  );
-
-  return (
-    <footer
-      className="footer"
-      itemScope
-      itemType="https://schema.org/Organization"
-    >
-      <meta itemProp="name" content="Ramazzini" />
-      <meta itemProp="url" content={siteUrl} />
-      <meta itemProp="logo" content={logoUrl} />
-      {contactPhone ? (
-        <meta itemProp="telephone" content={contactPhone} />
-      ) : null}
-      <meta itemProp="email" content={contactEmail} />
-      <div className="container footer-grid">
-        <div className="footer-brand">
-          <IsoMark className="footer-sigil" />
-          <Image
-            src="/RamazziniLogoClaroNoBg.png"
-            alt="Ramazzini"
-            width={521}
-            height={140}
-          />
-          <p>
-            Software mexicano para realizar evaluaciones médicas laborales con
-            mayor agilidad y generar informes profesionales, organizados y
-            fáciles de consultar.
-          </p>
-          <div className="footer-actions">
-            <a className="button button-primary" href="#demo">
-              Agendar demo
-            </a>
-            <a
-              className="button button-secondary"
-              href={`https://wa.me/${whatsapp}?text=${waMessage}`}
-            >
-              WhatsApp
-            </a>
-          </div>
-        </div>
-        <div className="footer-col">
-          <h3>Producto</h3>
-          <a href="#como-funciona">Cómo funciona</a>
-          <a href="#caracteristicas">Funciones</a>
-          <a href="#precios">Planes</a>
-        </div>
-        <div className="footer-col">
-          <h3>Confianza</h3>
-          <a href="#casos">Testimonios</a>
-          <a href="#seguridad">Seguridad</a>
-          <a href="#faq">Preguntas frecuentes</a>
-          <a href="#demo">Contacto</a>
-        </div>
-        <div className="footer-col footer-contact">
-          <h3>Contacto</h3>
-          <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
-          {contactPhone ? (
-            <a href={`tel:${phoneHref}`}>{contactPhone}</a>
-          ) : null}
-          <address>
-            Atención comercial para México y Latinoamérica
-            <br />
-            Demos en línea con reservación previa.
-          </address>
-          <span className="footer-hours">
-            Lun–Vie · 8:00–17:00 · Sáb · 8:00–14:00 (hora de Sinaloa)
-          </span>
-        </div>
-        <div className="footer-metrics">
-          <span>
-            <strong>+36k</strong> informes generados
-          </span>
-          <span>
-            <strong>+7k</strong> trab. gestionados
-          </span>
-          <span>
-            <strong>+250</strong> empresas atendidas
-          </span>
-          <span>
-            <strong>MX</strong> hecho en México
-          </span>
-        </div>
-      </div>
-      <div className="container footer-bottom">
-        <span>© 2026 Ramazzini. Salud y Trabajo.</span>
-        <span>
-          <a href="/terminos-y-condiciones" className="footer-link">
-            Términos
-          </a>
-        </span>
-      </div>
-    </footer>
-  );
-}

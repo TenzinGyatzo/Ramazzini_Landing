@@ -1,13 +1,11 @@
 import type { MetadataRoute } from "next";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://get.ramazzini.app";
-const now = new Date();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: siteUrl,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 1,
       images: [`${siteUrl}/social-preview.jpg`],
@@ -19,14 +17,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
-      url: `${siteUrl}/terminos-y-condiciones`,
-      lastModified: now,
+      url: `${siteUrl}/software-salud-ocupacional/`,
+      changeFrequency: "weekly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          "es-MX": `${siteUrl}/software-salud-ocupacional/`,
+          es: `${siteUrl}/software-salud-ocupacional/`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/expediente-medico-laboral/`,
+      changeFrequency: "weekly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          "es-MX": `${siteUrl}/expediente-medico-laboral/`,
+          es: `${siteUrl}/expediente-medico-laboral/`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/terminos-y-condiciones/`,
       changeFrequency: "yearly",
       priority: 0.3,
       alternates: {
         languages: {
-          "es-MX": `${siteUrl}/terminos-y-condiciones`,
-          es: `${siteUrl}/terminos-y-condiciones`,
+          "es-MX": `${siteUrl}/terminos-y-condiciones/`,
+          es: `${siteUrl}/terminos-y-condiciones/`,
         },
       },
     },
