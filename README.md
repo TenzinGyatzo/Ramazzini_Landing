@@ -9,7 +9,7 @@ Landing page comercial para Ramazzini, enfocada en captación de leads, agendami
 - CSS global
 - Resend para notificaciones del formulario
 - Metadata SEO, Open Graph, sitemap, robots y datos estructurados
-- Google Analytics y Google Tag Manager
+- Google Tag Manager; Google Analytics 4 se administra dentro del contenedor GTM
 
 ## Desarrollo
 
@@ -32,7 +32,6 @@ NEXT_PUBLIC_SITE_URL=https://get.ramazzini.app
 NEXT_PUBLIC_APP_URL=https://ramazzini.app/auth/onboarding
 NEXT_PUBLIC_CAL_URL=https://cal.com/ramazzini/demo-personalizada-de-ramazzini
 NEXT_PUBLIC_WHATSAPP_NUMBER=526681702850
-NEXT_PUBLIC_GA_ID=G-NEN3KECKWT
 NEXT_PUBLIC_GTM_ID=GTM-MPW2CTVB
 NEXT_PUBLIC_CONTACT_EMAIL=soporte@ramazzini.app
 NEXT_PUBLIC_SUPPORT_EMAIL=soporte@ramazzini.app
@@ -45,7 +44,7 @@ Para producción, cargar estos valores en el panel del proveedor de hosting. No 
 
 Las variables `NEXT_PUBLIC_*` se exponen al navegador y deben contener solo información pública del sitio, enlaces de conversión, medición y datos de contacto.
 
-Si se configuran `NEXT_PUBLIC_GTM_ID` y `NEXT_PUBLIC_GA_ID` al mismo tiempo, el sitio carga GTM y omite la integración directa de GA4 para evitar mediciones duplicadas. La etiqueta de GA4 debe administrarse dentro de GTM.
+El sitio carga Google Tag Manager (`GTM-MPW2CTVB`, o el valor de `NEXT_PUBLIC_GTM_ID` si se define). Google Analytics 4 se configura dentro del contenedor GTM; el código del sitio no instala `gtag.js`. Los eventos personalizados se envían al `dataLayer` y GTM decide cómo enviarlos a GA4.
 
 ## Comandos
 

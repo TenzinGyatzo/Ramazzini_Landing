@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Kanit } from "next/font/google";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 const kanit = Kanit({
@@ -16,7 +16,6 @@ const siteUrl = URL.canParse(rawSiteUrl) ? rawSiteUrl : defaultSiteUrl;
 const title = "Ramazzini | Software de Salud Ocupacional para Equipos Médicos";
 const description =
   "Realiza exámenes médicos laborales, organiza expedientes por empresa y trabajador, y genera informes PDF profesionales. Agenda una demo o prueba gratis 15 días.";
-const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-NEN3KECKWT";
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MPW2CTVB";
 
 export const metadata: Metadata = {
@@ -143,7 +142,6 @@ export default function RootLayout({
             />
           </noscript>
         ) : null}
-        {!gtmId && gaId ? <GoogleAnalytics gaId={gaId} /> : null}
         {children}
       </body>
     </html>
