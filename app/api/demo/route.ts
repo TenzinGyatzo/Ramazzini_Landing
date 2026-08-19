@@ -300,7 +300,11 @@ function redirectToThanks(
   status: string,
   extras?: { formType: FormType; conversionId: string },
 ) {
-  const url = new URL("/gracias", request.nextUrl.origin);
+  const origin =
+    process.env.NODE_ENV === "production"
+      ? process.env.NEXT_PUBLIC_SITE_URL || "https://get.ramazzini.app"
+      : request.nextUrl.origin;
+  const url = new URL("/gracias", origin);
   url.searchParams.set("estado", status);
 
   if (status === "enviado" && extras) {
