@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { Resend } from "resend";
+import { isFormType, type FormType } from "@/lib/analytics";
 
 export const runtime = "nodejs";
 
@@ -270,7 +271,14 @@ export async function POST(request: NextRequest) {
     return redirectToThanks(request, "error");
   }
 
-  return redirectToThanks(request, "enviado");
+  const formType = readField(lead, "form_type");
+  return redirectToThanks(
+    request,
+    "enviado",
+    isFormType(formType)
+      ? { formType, conversionId: crypto.randomUUID() }
+      : undefined,
+  );
 }
 
 function readField(lead: Record<string, FormDataEntryValue>, field: string) {
@@ -287,14 +295,20 @@ function isValidPhone(phone: string) {
   return digits.length >= 10 && digits.length <= 15;
 }
 
-function redirectToThanks(_request: NextRequest, status: string) {
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://get.ramazzini.app";
+function redirectToThanks(
+  request: NextRequest,
+  status: string,
+  extras?: { formType: FormType; conversionId: string },
+) {
+  const url = new URL("/gracias", request.nextUrl.origin);
+  url.searchParams.set("estado", status);
 
-  return NextResponse.redirect(
-    new URL(`/gracias?estado=${encodeURIComponent(status)}`, siteUrl),
-    303,
-  );
+  if (status === "enviado" && extras) {
+    url.searchParams.set("form_type", extras.formType);
+    url.searchParams.set("conversion_id", extras.conversionId);
+  }
+
+  return NextResponse.redirect(url, 303);
 }
 
 function isRateLimited(request: NextRequest) {

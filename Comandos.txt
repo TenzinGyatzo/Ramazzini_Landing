@@ -28,3 +28,9 @@ git pull --ff-only origin main
 npm run build
 pm2 restart ramazzini-landing --update-env
 
+
+
+git restore next-env.d.ts
+git pull --ff-only origin main
+npm run build
+pm2 restart ramazzini-landing --update-env

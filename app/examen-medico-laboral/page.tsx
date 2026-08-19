@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer";
 import { GuideContextTriad } from "../components/GuideContextTriad";
 import { Header } from "../components/Header";
 import { IsoMark } from "../components/IsoMark";
+import { TrackedCta } from "../components/TrackedCta";
 
 const appUrl =
   process.env.NEXT_PUBLIC_APP_URL || "https://ramazzini.app/auth/onboarding";
@@ -647,12 +648,22 @@ export default function ExamenMedicoLaboralPage() {
                   durante el mismo proceso.
                 </p>
                 <div className="hero-actions">
-                  <a className="button button-primary" href="/#demo">
+                  <TrackedCta
+                    className="button button-primary"
+                    href="/#demo"
+                    event="demo_cta_click"
+                    eventParams={{ cta_location: "guide_cta" }}
+                  >
                     <CalendarDays size={18} /> Agenda una demo
-                  </a>
-                  <a className="button button-secondary" href={appUrl}>
+                  </TrackedCta>
+                  <TrackedCta
+                    className="button button-secondary"
+                    href={appUrl}
+                    event="trial_cta_click"
+                    eventParams={{ cta_location: "guide_cta", plan: "none" }}
+                  >
                     Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
-                  </a>
+                  </TrackedCta>
                 </div>
               </div>
               <div className="mock-window screenshot-window">
@@ -711,25 +722,37 @@ export default function ExamenMedicoLaboralPage() {
                 desarrollada específicamente para salud ocupacional.
               </p>
               <div className="hero-actions">
-                <a className="button button-primary" href={appUrl}>
+                <TrackedCta
+                  className="button button-primary"
+                  href={appUrl}
+                  event="trial_cta_click"
+                  eventParams={{ cta_location: "closing_cta", plan: "none" }}
+                >
                   Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
-                </a>
-                <a className="button button-secondary" href="/#demo">
+                </TrackedCta>
+                <TrackedCta
+                  className="button button-secondary"
+                  href="/#demo"
+                  event="demo_cta_click"
+                  eventParams={{ cta_location: "closing_cta" }}
+                >
                   <CalendarDays size={18} /> Agenda una demo
-                </a>
+                </TrackedCta>
               </div>
             </div>
           </section>
         </article>
       </main>
       <Footer homeHref="/" />
-      <a
+      <TrackedCta
         className="whatsapp"
         aria-label="Enviar WhatsApp a Ramazzini"
         href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+        event="whatsapp_click"
+        eventParams={{ cta_location: "floating" }}
       >
         <Image src="/whatsapp-logo.svg" alt="" width={30} height={30} />
-      </a>
+      </TrackedCta>
     </div>
   );
 }

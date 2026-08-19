@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { IsoMark } from "./IsoMark";
+import { TrackedCta } from "./TrackedCta";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://get.ramazzini.app";
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "526681702850";
@@ -50,18 +51,22 @@ export function Footer({ homeHref = "" }: FooterProps) {
             fáciles de consultar.
           </p>
           <div className="footer-actions">
-            <a
+            <TrackedCta
               className="button button-primary"
               href={sectionHref(homeHref, "demo")}
+              event="demo_cta_click"
+              eventParams={{ cta_location: "footer" }}
             >
               Agendar demo
-            </a>
-            <a
+            </TrackedCta>
+            <TrackedCta
               className="button button-secondary"
               href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+              event="whatsapp_click"
+              eventParams={{ cta_location: "footer" }}
             >
               WhatsApp
-            </a>
+            </TrackedCta>
           </div>
         </div>
         <div className="footer-col">

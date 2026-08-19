@@ -20,6 +20,7 @@ import {
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { IsoMark } from "../components/IsoMark";
+import { TrackedCta } from "../components/TrackedCta";
 
 const pageTitle = "Software de salud ocupacional | Ramazzini";
 const pageDescription =
@@ -392,12 +393,22 @@ export default function SoftwareSaludOcupacionalPage() {
               depender de Word, Excel y carpetas dispersas.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="/#demo">
+              <TrackedCta
+                className="button button-primary"
+                href="/#demo"
+                event="demo_cta_click"
+                eventParams={{ cta_location: "hero" }}
+              >
                 <CalendarDays size={18} /> Agenda una demo
-              </a>
-              <a className="button button-secondary" href={appUrl}>
+              </TrackedCta>
+              <TrackedCta
+                className="button button-secondary"
+                href={appUrl}
+                event="trial_cta_click"
+                eventParams={{ cta_location: "hero", plan: "none" }}
+              >
                 Prueba gratis 15 días <ArrowRight size={18} />
-              </a>
+              </TrackedCta>
             </div>
             <div className="seo-hero-visual">
               <div className="mock-window screenshot-window">
@@ -604,9 +615,14 @@ export default function SoftwareSaludOcupacionalPage() {
                 exploraciones, aptitudes, certificados y otras evaluaciones
                 sin reconstruir cada documento desde cero.
               </p>
-              <a className="button button-primary" href="/#demo">
+              <TrackedCta
+                className="button button-primary"
+                href="/#demo"
+                event="demo_cta_click"
+                eventParams={{ cta_location: "guide_cta" }}
+              >
                 Conoce Ramazzini en una demo <ArrowRight size={18} />
-              </a>
+              </TrackedCta>
             </div>
             <div className="mock-window screenshot-window">
               <div className="mock-window-bar" aria-hidden="true">
@@ -695,23 +711,35 @@ export default function SoftwareSaludOcupacionalPage() {
             </p>
           </div>
           <div className="hero-actions">
-            <a className="button button-primary" href={appUrl}>
+            <TrackedCta
+              className="button button-primary"
+              href={appUrl}
+              event="trial_cta_click"
+              eventParams={{ cta_location: "closing_cta", plan: "none" }}
+            >
               Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
-            </a>
-            <a className="button button-secondary" href="/#demo">
+            </TrackedCta>
+            <TrackedCta
+              className="button button-secondary"
+              href="/#demo"
+              event="demo_cta_click"
+              eventParams={{ cta_location: "closing_cta" }}
+            >
               <CalendarDays size={18} /> Agenda una demo
-            </a>
+            </TrackedCta>
           </div>
         </section>
       </main>
       <Footer homeHref="/" />
-      <a
+      <TrackedCta
         className="whatsapp"
         aria-label="Enviar WhatsApp a Ramazzini"
         href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+        event="whatsapp_click"
+        eventParams={{ cta_location: "floating" }}
       >
         <Image src="/whatsapp-logo.svg" alt="" width={30} height={30} />
-      </a>
+      </TrackedCta>
     </div>
   );
 }

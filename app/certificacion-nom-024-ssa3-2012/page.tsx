@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight, CalendarDays, FileText } from "lucide-react";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { TrackedCta } from "../components/TrackedCta";
 
 const pageTitle = "Certificación NOM-024-SSA3-2012 | Ramazzini";
 const pageDescription =
@@ -735,25 +736,37 @@ export default function CertificacionNom024Page() {
                 los requisitos de intercambio de información en salud.
               </p>
               <div className="hero-actions">
-                <a className="button button-primary" href="/#demo">
+                <TrackedCta
+                  className="button button-primary"
+                  href="/#demo"
+                  event="demo_cta_click"
+                  eventParams={{ cta_location: "closing_cta" }}
+                >
                   <CalendarDays size={18} /> Agenda una demo
-                </a>
-                <a className="button button-secondary" href={appUrl}>
+                </TrackedCta>
+                <TrackedCta
+                  className="button button-secondary"
+                  href={appUrl}
+                  event="trial_cta_click"
+                  eventParams={{ cta_location: "closing_cta", plan: "none" }}
+                >
                   Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
-                </a>
+                </TrackedCta>
               </div>
             </div>
           </section>
         </article>
       </main>
       <Footer homeHref="/" />
-      <a
+      <TrackedCta
         className="whatsapp"
         aria-label="Enviar WhatsApp a Ramazzini"
         href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+        event="whatsapp_click"
+        eventParams={{ cta_location: "floating" }}
       >
         <Image src="/whatsapp-logo.svg" alt="" width={30} height={30} />
-      </a>
+      </TrackedCta>
     </div>
   );
 }

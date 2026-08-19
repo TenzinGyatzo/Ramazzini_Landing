@@ -23,6 +23,9 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { IsoMark } from "./components/IsoMark";
 import { ScreensShowcase } from "./components/ScreensShowcase";
+import { TrackedCta } from "./components/TrackedCta";
+import { TrackedForm } from "./components/TrackedForm";
+import type { Plan as PlanId } from "@/lib/analytics";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://get.ramazzini.app";
 const appUrl =
@@ -658,12 +661,22 @@ export default function Home() {
               className="hero-actions hero-reveal"
               style={{ animationDelay: "620ms" }}
             >
-              <a className="button button-primary" href="#demo">
+              <TrackedCta
+                className="button button-primary"
+                href="#demo"
+                event="demo_cta_click"
+                eventParams={{ cta_location: "hero" }}
+              >
                 <CalendarDays size={18} /> Agenda una demo de 45 minutos
-              </a>
-              <a className="button button-secondary" href={appUrl}>
+              </TrackedCta>
+              <TrackedCta
+                className="button button-secondary"
+                href={appUrl}
+                event="trial_cta_click"
+                eventParams={{ cta_location: "hero", plan: "none" }}
+              >
                 Empieza gratis 15 días <ArrowRight size={18} />
-              </a>
+              </TrackedCta>
             </div>
             <p
               className="microcopy hero-reveal"
@@ -924,9 +937,14 @@ export default function Home() {
                 y agiliza todo el proceso, desde la evaluación médica hasta la
                 entrega de informes.
               </p>
-              <a className="button button-primary" href="#demo">
+              <TrackedCta
+                className="button button-primary"
+                href="#demo"
+                event="demo_cta_click"
+                eventParams={{ cta_location: "product" }}
+              >
                 Quiero verlo en acción <ArrowRight size={18} />
-              </a>
+              </TrackedCta>
             </div>
             <div className="mock-window screenshot-window">
               <div className="mock-window-bar">
@@ -1080,6 +1098,7 @@ export default function Home() {
           <div className="pricing">
             <Plan
               name="Básico"
+              plan="basic"
               price="$999"
               text="Para profesionales que quieren digitalizar su operación y dejar atrás el papel"
               features={[
@@ -1092,6 +1111,7 @@ export default function Home() {
             <Plan
               featured
               name="Profesional"
+              plan="professional"
               price="$2,397"
               text="Para equipos de salud ocupacional que atienden varias empresas."
               features={[
@@ -1103,6 +1123,7 @@ export default function Home() {
             />
             <Plan
               name="Empresarial"
+              plan="enterprise"
               price="$4,395"
               text="Para operaciones de alto volumen que necesitan mayor capacidad."
               features={[
@@ -1118,9 +1139,14 @@ export default function Home() {
               ¿Prefieres conocer Ramazzini antes de probarlo? Agenda una demo
               personalizada.
             </p>
-            <a className="button button-secondary" href="#demo">
+            <TrackedCta
+              className="button button-secondary"
+              href="#demo"
+              event="demo_cta_click"
+              eventParams={{ cta_location: "pricing" }}
+            >
               Agendar demo
-            </a>
+            </TrackedCta>
           </div>
         </section>
 
@@ -1226,13 +1252,15 @@ export default function Home() {
         </section>
       </main>
       <Footer />
-      <a
+      <TrackedCta
         className="whatsapp"
         aria-label="Enviar WhatsApp a Ramazzini"
         href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+        event="whatsapp_click"
+        eventParams={{ cta_location: "floating" }}
       >
         <Image src="/whatsapp-logo.svg" alt="" width={30} height={30} />
-      </a>
+      </TrackedCta>
     </div>
   );
 }
@@ -1261,21 +1289,27 @@ function HeroVideo() {
           />
         </div>
       </div>
-      <a className="video-under-cta" href="#demo-form">
+      <TrackedCta
+        className="video-under-cta"
+        href="#demo-form"
+        event="demo_cta_click"
+        eventParams={{ cta_location: "video_section" }}
+      >
         Descubre cómo agilizar tu operación <ArrowRight size={16} />
-      </a>
+      </TrackedCta>
     </div>
   );
 }
 
 function QuickLeadForm() {
   return (
-    <form
+    <TrackedForm
       className="quick-lead-form hero-reveal"
       style={{ animationDelay: "1080ms" }}
       action="/api/demo"
       method="post"
       aria-label="Agendar demo rápida"
+      formType="quick"
     >
       <div className="quick-lead-copy">
         <strong>Lleva esta eficiencia a tu operación</strong>
@@ -1319,6 +1353,7 @@ function QuickLeadForm() {
         required
       />
       <input type="hidden" name="source" value="Hero video lead" />
+      <input type="hidden" name="form_type" value="quick" />
       <input
         className="form-honeypot"
         type="text"
@@ -1332,7 +1367,7 @@ function QuickLeadForm() {
       <button className="button button-primary" type="submit">
         Quiero mi demo <ArrowRight size={18} />
       </button>
-    </form>
+    </TrackedForm>
   );
 }
 
@@ -1407,12 +1442,14 @@ function Step({
 
 function Plan({
   name,
+  plan,
   price,
   text,
   features,
   featured = false,
 }: {
   name: string;
+  plan: PlanId;
   price: string;
   text: string;
   features: string[];
@@ -1437,20 +1474,26 @@ function Plan({
           </li>
         ))}
       </ul>
-      <a className="button button-primary" href={appUrl}>
+      <TrackedCta
+        className="button button-primary"
+        href={appUrl}
+        event="trial_cta_click"
+        eventParams={{ cta_location: "pricing", plan }}
+      >
         Probar gratis 15 días
-      </a>
+      </TrackedCta>
     </article>
   );
 }
 
 function DemoForm() {
   return (
-    <form
+    <TrackedForm
       className="form-panel"
       id="demo-form"
       action="/api/demo"
       method="post"
+      formType="full"
     >
       <IsoMark className="form-sigil" />
       <div className="form-head">
@@ -1532,6 +1575,7 @@ function DemoForm() {
           />
         </div>
         <input type="hidden" name="source" value="Landing Ramazzini" />
+        <input type="hidden" name="form_type" value="full" />
         <input
           className="form-honeypot"
           type="text"
@@ -1552,7 +1596,7 @@ function DemoForm() {
           </p>
         </div>
       </div>
-    </form>
+    </TrackedForm>
   );
 }
 

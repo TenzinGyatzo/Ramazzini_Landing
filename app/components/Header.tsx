@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { TrackedCta } from "./TrackedCta";
 
 const appUrl =
   process.env.NEXT_PUBLIC_APP_URL || "https://ramazzini.app/auth/onboarding";
@@ -38,16 +39,23 @@ export function Header({
         </nav>
         <div className="nav-actions">
           {showTrialCta ? (
-            <a className="button button-secondary" href={appUrl}>
+            <TrackedCta
+              className="button button-secondary"
+              href={appUrl}
+              event="trial_cta_click"
+              eventParams={{ cta_location: "header", plan: "none" }}
+            >
               Probar gratis
-            </a>
+            </TrackedCta>
           ) : null}
-          <a
+          <TrackedCta
             className="button button-primary"
             href={sectionHref(homeHref, "demo")}
+            event="demo_cta_click"
+            eventParams={{ cta_location: "header" }}
           >
             Agendar demo
-          </a>
+          </TrackedCta>
         </div>
       </div>
     </header>

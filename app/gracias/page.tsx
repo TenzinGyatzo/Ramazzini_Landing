@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, MessageCircle } from "lucide-react";
 import { CalInline } from "../components/CalInline";
+import { GenerateLeadTracker } from "../components/GenerateLeadTracker";
+import { TrackedCta } from "../components/TrackedCta";
+import { isConversionId, isFormType } from "@/lib/analytics";
 
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "526681702850";
 
@@ -22,6 +25,8 @@ export const metadata: Metadata = {
 export default async function GraciasPage({ searchParams }: GraciasPageProps) {
   const params = (await searchParams) || {};
   const status = firstValue(params.estado);
+  const formType = firstValue(params.form_type);
+  const conversionId = firstValue(params.conversion_id);
   const hasError = status === "error" || status === "limite";
   const isIncomplete = status === "incompleto";
   const waMessage = encodeURIComponent(
@@ -56,12 +61,14 @@ export default async function GraciasPage({ searchParams }: GraciasPageProps) {
               <Link className="button button-primary" href="/#demo-form">
                 <ArrowLeft size={18} /> Volver al formulario
               </Link>
-              <a
+              <TrackedCta
                 className="button button-secondary"
                 href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+                event="whatsapp_click"
+                eventParams={{ cta_location: "error" }}
               >
                 <MessageCircle size={18} /> Escribir por WhatsApp
-              </a>
+              </TrackedCta>
             </div>
           </section>
         </div>
@@ -71,6 +78,11 @@ export default async function GraciasPage({ searchParams }: GraciasPageProps) {
 
   return (
     <main className="thank-you thank-you-booking">
+      {status === "enviado" &&
+      isFormType(formType) &&
+      isConversionId(conversionId) ? (
+        <GenerateLeadTracker formType={formType} conversionId={conversionId} />
+      ) : null}
       <div className="container thank-you-booking-panel">
         <section className="thank-you-intro">
           <span className="eyebrow">
@@ -82,13 +94,15 @@ export default async function GraciasPage({ searchParams }: GraciasPageProps) {
             acomode para reservar una demo de 45 minutos por Google Meet.
           </p>
           <div className="hero-actions">
-            <a
+            <TrackedCta
               className="button button-secondary"
               href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+              event="whatsapp_click"
+              eventParams={{ cta_location: "thank_you" }}
             >
               <MessageCircle size={18} /> ¿Necesitas ayuda? Escríbenos por
               WhatsApp
-            </a>
+            </TrackedCta>
             <Link className="button button-secondary" href="/">
               <ArrowLeft size={18} /> Volver al inicio
             </Link>
