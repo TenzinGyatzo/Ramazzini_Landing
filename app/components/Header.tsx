@@ -45,7 +45,7 @@ export function Header({
               event="trial_cta_click"
               eventParams={{ cta_location: "header", plan: "none" }}
             >
-              Probar gratis
+              Probar gratis 15 días
             </TrackedCta>
           ) : null}
           <TrackedCta
@@ -54,7 +54,7 @@ export function Header({
             event="demo_cta_click"
             eventParams={{ cta_location: "header" }}
           >
-            Agendar demo
+            Agendar demo personalizada
           </TrackedCta>
         </div>
       </div>

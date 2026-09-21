@@ -9,21 +9,22 @@ export type DemoCtaLocation =
   | "footer"
   | "guide_cta"
   | "closing_cta"
-  | "video_section";
+  | "video_section"
+  | "campaign";
 
 export type TrialCtaLocation =
-  | "header"
-  | "hero"
-  | "pricing"
-  | "guide_cta"
-  | "closing_cta";
+  "header" | "hero" | "pricing" | "guide_cta" | "closing_cta";
 
 export type WhatsAppCtaLocation = "floating" | "footer" | "thank_you" | "error";
 
 export type AnalyticsEventMap = {
-  demo_cta_click: { cta_location: DemoCtaLocation };
-  demo_form_start: { form_type: FormType };
-  generate_lead: { form_type: FormType };
+  campaign_exposure: { campaign_variant: "a" | "b" };
+  demo_cta_click: {
+    cta_location: DemoCtaLocation;
+    campaign_variant?: "a" | "b";
+  };
+  demo_form_start: { form_type: FormType; campaign_variant?: "a" | "b" };
+  generate_lead: { form_type: FormType; campaign_variant?: "a" | "b" };
   trial_cta_click: { cta_location: TrialCtaLocation; plan: Plan | "none" };
   whatsapp_click: { cta_location: WhatsAppCtaLocation };
 };
@@ -31,6 +32,7 @@ export type AnalyticsEventMap = {
 export type AnalyticsEventName = keyof AnalyticsEventMap;
 
 const eventsWithPagePath: ReadonlySet<AnalyticsEventName> = new Set([
+  "campaign_exposure",
   "demo_cta_click",
   "demo_form_start",
   "trial_cta_click",
@@ -82,5 +84,6 @@ export function trackEvent<E extends AnalyticsEventName>(
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[];
+    clarity?: (...args: string[]) => void;
   }
 }

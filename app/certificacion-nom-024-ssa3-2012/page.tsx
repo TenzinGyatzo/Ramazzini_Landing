@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { TrackedCta } from "../components/TrackedCta";
 
-const pageTitle = "Certificación NOM-024-SSA3-2012 | Ramazzini";
+const pageTitle = "NOM-024-SSA3-2012: requisitos y estado de Ramazzini";
 const pageDescription =
   "Información sobre la NOM-024-SSA3-2012, certificación de sistemas de información en salud y el estado de certificación de Ramazzini.";
 const pagePath = "/certificacion-nom-024-ssa3-2012/";
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 };
 
 const certificationStatus = {
-  estado: "En proceso de certificación",
+  estado: "Certificación aún no obtenida",
   descripcion:
     "Ramazzini se encuentra actualmente en el proceso de evaluación de conformidad con la NOM-024-SSA3-2012.",
 };
@@ -305,16 +305,18 @@ export default function CertificacionNom024Page() {
               <span className="eyebrow">
                 <FileText size={16} /> Interoperabilidad y cumplimiento
               </span>
-              <h1>
-                Certificación NOM-024-SSA3-2012 para sistemas de información en
-                salud
-              </h1>
+              <h1>NOM-024-SSA3-2012: requisitos y estado de Ramazzini</h1>
               <div className="stack guide-prose">
+                <p className="lead">
+                  Ramazzini tiene funciones y controles implementados con
+                  referencia a la norma. Esto no equivale a contar con una
+                  certificación: todavía no se ha obtenido el certificado.
+                </p>
                 <p className="lead">
                   La NOM-024-SSA3-2012 establece requisitos para los sistemas
                   que registran información electrónica en salud y para la
-                  generación e intercambio de información conforme a las
-                  guías y formatos definidos por la Secretaría de Salud.
+                  generación e intercambio de información conforme a las guías y
+                  formatos definidos por la Secretaría de Salud.
                 </p>
                 <p className="lead">
                   Para un sistema como Ramazzini, esto implica poder registrar
@@ -328,7 +330,9 @@ export default function CertificacionNom024Page() {
                 aria-label="Estado de certificación"
               >
                 <p className="section-kicker">Estado de Ramazzini</p>
-                <p className="guide-status-badge">{certificationStatus.estado}</p>
+                <p className="guide-status-badge">
+                  {certificationStatus.estado}
+                </p>
                 <p className="guide-hero-note">
                   {certificationStatus.descripcion}
                 </p>
@@ -381,7 +385,9 @@ export default function CertificacionNom024Page() {
 
           <section className="guide-section container" id="que-regula">
             <div className="section-head">
-              <span className="section-kicker">Más que digitalizar expedientes</span>
+              <span className="section-kicker">
+                Más que digitalizar expedientes
+              </span>
               <h2>
                 ¿Qué aspectos contempla la NOM-024 en un sistema de información
                 en salud?
@@ -416,7 +422,9 @@ export default function CertificacionNom024Page() {
           >
             <div className="section-head">
               <span className="section-kicker">Evaluación de conformidad</span>
-              <h2>Cumplir la norma y demostrarlo no son exactamente lo mismo</h2>
+              <h2>
+                Cumplir la norma y demostrarlo no son exactamente lo mismo
+              </h2>
               <p className="lead">
                 Un desarrollador puede diseñar su sistema tomando la NOM-024
                 como referencia. La certificación añade un paso diferente:
@@ -472,7 +480,9 @@ export default function CertificacionNom024Page() {
           <section className="guide-section container" id="alcance">
             <div className="section-head">
               <span className="section-kicker">Una precisión importante</span>
-              <h2>Una certificación siempre debe leerse junto con su alcance</h2>
+              <h2>
+                Una certificación siempre debe leerse junto con su alcance
+              </h2>
               <p className="lead">
                 Decir que un sistema está certificado sin explicar qué fue
                 evaluado deja fuera una parte importante de la información. La
@@ -481,7 +491,7 @@ export default function CertificacionNom024Page() {
                 fueron evaluados.
               </p>
             </div>
-           {/*  <div className="stack guide-prose">
+            {/*  <div className="stack guide-prose">
               <p className="lead">
                 Esto permite saber qué capacidad de intercambio fue
                 efectivamente sometida al procedimiento de evaluación.
@@ -500,7 +510,9 @@ export default function CertificacionNom024Page() {
           <section className="guide-section container" id="interoperabilidad">
             <div className="section-head">
               <span className="section-kicker">Guías y formatos</span>
-              <h2>¿Qué son las Guías de Intercambio de Información en Salud?</h2>
+              <h2>
+                ¿Qué son las Guías de Intercambio de Información en Salud?
+              </h2>
             </div>
             <div className="stack guide-prose">
               <p className="lead">
@@ -536,7 +548,9 @@ export default function CertificacionNom024Page() {
           <section className="guide-section container" id="que-implica">
             <div className="section-head">
               <span className="section-kicker">En la práctica</span>
-              <h2>¿Por qué puede importar la certificación al elegir un sistema?</h2>
+              <h2>
+                ¿Por qué puede importar la certificación al elegir un sistema?
+              </h2>
               <p className="lead">
                 Para muchas organizaciones, la NOM-024 puede parecer
                 inicialmente un asunto técnico del proveedor de software. Sin
@@ -708,7 +722,10 @@ export default function CertificacionNom024Page() {
             </p>
           </section>
 
-          <section className="guide-section container" id="preguntas-frecuentes">
+          <section
+            className="guide-section container"
+            id="preguntas-frecuentes"
+          >
             <div className="section-head">
               <span className="section-kicker">Dudas frecuentes</span>
               <h2>
@@ -742,7 +759,7 @@ export default function CertificacionNom024Page() {
                   event="demo_cta_click"
                   eventParams={{ cta_location: "closing_cta" }}
                 >
-                  <CalendarDays size={18} /> Agenda una demo
+                  <CalendarDays size={18} /> Agendar demo personalizada
                 </TrackedCta>
                 <TrackedCta
                   className="button button-secondary"
@@ -750,7 +767,7 @@ export default function CertificacionNom024Page() {
                   event="trial_cta_click"
                   eventParams={{ cta_location: "closing_cta", plan: "none" }}
                 >
-                  Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
+                  Probar gratis 15 días <ArrowRight size={18} />
                 </TrackedCta>
               </div>
             </div>

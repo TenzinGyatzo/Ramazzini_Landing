@@ -301,8 +301,8 @@ export default function ExamenMedicoLaboralPage() {
                 <p className="lead">
                   Eso hace que un examen de ingreso, una evaluación periódica o
                   una reincorporación puedan requerir enfoques distintos,
-                  incluso cuando se trata del mismo trabajador. La exploración
-                  y los estudios tienen sentido cuando responden a ese contexto.
+                  incluso cuando se trata del mismo trabajador. La exploración y
+                  los estudios tienen sentido cuando responden a ese contexto.
                 </p>
               </div>
             </div>
@@ -350,8 +350,8 @@ export default function ExamenMedicoLaboralPage() {
               </p>
               <aside className="guide-callout">
                 <p>
-                  El examen médico laboral no es una batería de estudios: es
-                  una evaluación orientada por el trabajador, el puesto y sus
+                  El examen médico laboral no es una batería de estudios: es una
+                  evaluación orientada por el trabajador, el puesto y sus
                   riesgos.
                 </p>
               </aside>
@@ -366,8 +366,8 @@ export default function ExamenMedicoLaboralPage() {
                 Hay elementos clínicos que forman parte habitual de una
                 evaluación, pero su importancia cambia con el trabajo. Conocer
                 únicamente el nombre del puesto suele ser insuficiente; interesa
-                entender qué hace realmente la persona y bajo qué condiciones
-                lo hace.
+                entender qué hace realmente la persona y bajo qué condiciones lo
+                hace.
               </p>
             </div>
             <GuideContextTriad
@@ -481,8 +481,8 @@ export default function ExamenMedicoLaboralPage() {
                 <h3>Examen médico laboral</h3>
                 <p className="lead">
                   Recaba e interpreta antecedentes, síntomas, hallazgos clínicos
-                  y estudios relevantes para conocer la situación del
-                  trabajador en el contexto de su trabajo.
+                  y estudios relevantes para conocer la situación del trabajador
+                  en el contexto de su trabajo.
                 </p>
               </article>
               <article className="card good">
@@ -500,7 +500,8 @@ export default function ExamenMedicoLaboralPage() {
               significa realmente ese hallazgo para el trabajo concreto.{" "}
               <a className="guide-inline-link" href="/aptitud-medica-laboral/">
                 Conoce más sobre la aptitud médica laboral
-              </a>.
+              </a>
+              .
             </p>
           </section>
 
@@ -517,9 +518,9 @@ export default function ExamenMedicoLaboralPage() {
               </p>
               <p className="lead">
                 Antecedentes, exploraciones, estudios y conclusiones deberían
-                poder consultarse después sin depender de encontrar el
-                documento correcto entre carpetas o reconstruir manualmente lo
-                que ocurrió en visitas anteriores.
+                poder consultarse después sin depender de encontrar el documento
+                correcto entre carpetas o reconstruir manualmente lo que ocurrió
+                en visitas anteriores.
               </p>
               <p className="lead">
                 Por eso, la información generada durante el examen debería
@@ -530,7 +531,8 @@ export default function ExamenMedicoLaboralPage() {
                   href="/expediente-medico-laboral/"
                 >
                   Conoce cómo organizar un expediente médico laboral
-                </a>.
+                </a>
+                .
               </p>
             </div>
           </section>
@@ -547,10 +549,10 @@ export default function ExamenMedicoLaboralPage() {
                   que resulten aplicables en cada caso.
                 </p>
                 <p className="lead">
-                  El marco puede involucrar disposiciones generales de
-                  seguridad y salud en el trabajo, regulación sobre expedientes
-                  clínicos y normas específicas relacionadas con determinadas
-                  exposiciones o actividades.
+                  El marco puede involucrar disposiciones generales de seguridad
+                  y salud en el trabajo, regulación sobre expedientes clínicos y
+                  normas específicas relacionadas con determinadas exposiciones
+                  o actividades.
                 </p>
               </div>
               <div className="guide-context-grid">
@@ -642,10 +644,9 @@ export default function ExamenMedicoLaboralPage() {
                   consulta.
                 </p>
                 <p className="lead">
-                  Los datos que ya existen pueden reutilizarse, las
-                  evaluaciones anteriores permanecen disponibles y los
-                  documentos se generan a partir de la información capturada
-                  durante el mismo proceso.
+                  Los datos que ya existen pueden reutilizarse, las evaluaciones
+                  anteriores permanecen disponibles y los documentos se generan
+                  a partir de la información capturada durante el mismo proceso.
                 </p>
                 <div className="hero-actions">
                   <TrackedCta
@@ -654,7 +655,7 @@ export default function ExamenMedicoLaboralPage() {
                     event="demo_cta_click"
                     eventParams={{ cta_location: "guide_cta" }}
                   >
-                    <CalendarDays size={18} /> Agenda una demo
+                    <CalendarDays size={18} /> Agendar demo personalizada
                   </TrackedCta>
                   <TrackedCta
                     className="button button-secondary"
@@ -662,7 +663,7 @@ export default function ExamenMedicoLaboralPage() {
                     event="trial_cta_click"
                     eventParams={{ cta_location: "guide_cta", plan: "none" }}
                   >
-                    Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
+                    Probar gratis 15 días <ArrowRight size={18} />
                   </TrackedCta>
                 </div>
               </div>
@@ -697,9 +698,7 @@ export default function ExamenMedicoLaboralPage() {
           >
             <div className="section-head">
               <span className="section-kicker">Dudas frecuentes</span>
-              <h2>
-                Preguntas frecuentes sobre exámenes médicos laborales
-              </h2>
+              <h2>Preguntas frecuentes sobre exámenes médicos laborales</h2>
             </div>
             <div className="faq">
               {faqs.map(([question, answer]) => (
@@ -728,7 +727,7 @@ export default function ExamenMedicoLaboralPage() {
                   event="trial_cta_click"
                   eventParams={{ cta_location: "closing_cta", plan: "none" }}
                 >
-                  Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
+                  Probar gratis 15 días <ArrowRight size={18} />
                 </TrackedCta>
                 <TrackedCta
                   className="button button-secondary"
@@ -736,7 +735,7 @@ export default function ExamenMedicoLaboralPage() {
                   event="demo_cta_click"
                   eventParams={{ cta_location: "closing_cta" }}
                 >
-                  <CalendarDays size={18} /> Agenda una demo
+                  <CalendarDays size={18} /> Agendar demo personalizada
                 </TrackedCta>
               </div>
             </div>

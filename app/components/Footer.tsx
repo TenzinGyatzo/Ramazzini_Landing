@@ -57,7 +57,7 @@ export function Footer({ homeHref = "" }: FooterProps) {
               event="demo_cta_click"
               eventParams={{ cta_location: "footer" }}
             >
-              Agendar demo
+              Agendar demo personalizada
             </TrackedCta>
             <TrackedCta
               className="button button-secondary"
@@ -71,7 +71,9 @@ export function Footer({ homeHref = "" }: FooterProps) {
         </div>
         <div className="footer-col">
           <h3>Producto</h3>
-          <a href="/software-salud-ocupacional/">Software de salud ocupacional</a>
+          <a href="/software-salud-ocupacional/">
+            Software de salud ocupacional
+          </a>
           <a href={sectionHref(homeHref, "como-funciona")}>Cómo funciona</a>
           <a href={sectionHref(homeHref, "caracteristicas")}>Funciones</a>
           <a href={sectionHref(homeHref, "precios")}>Planes</a>

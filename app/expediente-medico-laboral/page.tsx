@@ -6,7 +6,8 @@ import { Header } from "../components/Header";
 import { IsoMark } from "../components/IsoMark";
 import { TrackedCta } from "../components/TrackedCta";
 
-const pageTitle = "Expediente médico laboral: qué es y cómo organizarlo | Ramazzini";
+const pageTitle =
+  "Expediente médico laboral: qué es y cómo organizarlo | Ramazzini";
 const pageDescription =
   "Conoce qué es un expediente médico laboral, qué información y documentos contiene, cómo organizarlo y qué considerar para su gestión digital.";
 const pagePath = "/expediente-medico-laboral/";
@@ -238,7 +239,8 @@ const mexicoBlocks = [
   },
   {
     id: "nom-030",
-    title: "NOM-030-STPS-2009 — Servicios preventivos de seguridad y salud en el trabajo",
+    title:
+      "NOM-030-STPS-2009 — Servicios preventivos de seguridad y salud en el trabajo",
     text: "Establece funciones y actividades de los servicios preventivos de seguridad y salud en el trabajo. Dentro de este marco se contempla el seguimiento a la salud de los trabajadores, y su Guía de Referencia II incluye recomendaciones relacionadas con acciones de salud y exámenes médicos.",
   },
   {
@@ -424,8 +426,8 @@ export default function ExpedienteMedicoLaboralPage() {
                 <p className="lead">
                   Para lograrlo, la información clínica necesita conservar
                   también su contexto: a quién pertenece, cuándo se obtuvo, en
-                  qué empresa y puesto trabajaba la persona y qué evaluación
-                  dio origen a cada resultado o documento.
+                  qué empresa y puesto trabajaba la persona y qué evaluación dio
+                  origen a cada resultado o documento.
                 </p>
               </div>
             </div>
@@ -452,19 +454,18 @@ export default function ExpedienteMedicoLaboralPage() {
             </div>
             <div className="stack guide-prose">
               <p className="lead">
-                En la práctica, el expediente médico laboral es el historial
-                que se va construyendo alrededor de cada trabajador. Ahí
-                convergen sus antecedentes, evaluaciones médicas,
-                exploraciones, estudios, documentos de aptitud y demás
-                información generada durante su seguimiento.
+                En la práctica, el expediente médico laboral es el historial que
+                se va construyendo alrededor de cada trabajador. Ahí convergen
+                sus antecedentes, evaluaciones médicas, exploraciones, estudios,
+                documentos de aptitud y demás información generada durante su
+                seguimiento.
               </p>
               <p className="lead">
-                Lo importante es que esa información no quede como una
-                colección de documentos independientes. Cuando cada evaluación
-                conserva su fecha, contexto laboral y relación con el
-                trabajador, el expediente permite revisar antecedentes,
-                comparar resultados y entender mejor lo que ha ocurrido a lo
-                largo del tiempo.
+                Lo importante es que esa información no quede como una colección
+                de documentos independientes. Cuando cada evaluación conserva su
+                fecha, contexto laboral y relación con el trabajador, el
+                expediente permite revisar antecedentes, comparar resultados y
+                entender mejor lo que ha ocurrido a lo largo del tiempo.
               </p>
               <aside className="guide-callout">
                 <p>
@@ -652,8 +653,8 @@ export default function ExpedienteMedicoLaboralPage() {
                 manual de documentos.
               </p>
               <p className="lead">
-                El cambio importante ocurre cuando los datos y documentos
-                quedan relacionados con el trabajador, su empresa, puesto y
+                El cambio importante ocurre cuando los datos y documentos quedan
+                relacionados con el trabajador, su empresa, puesto y
                 evaluaciones. Entonces el expediente deja de ser solamente
                 almacenamiento digital y empieza a funcionar como un historial
                 consultable.
@@ -819,7 +820,7 @@ export default function ExpedienteMedicoLaboralPage() {
                     event="demo_cta_click"
                     eventParams={{ cta_location: "guide_cta" }}
                   >
-                    <CalendarDays size={18} /> Agenda una demo
+                    <CalendarDays size={18} /> Agendar demo personalizada
                   </TrackedCta>
                   <TrackedCta
                     className="button button-secondary"
@@ -827,7 +828,7 @@ export default function ExpedienteMedicoLaboralPage() {
                     event="trial_cta_click"
                     eventParams={{ cta_location: "guide_cta", plan: "none" }}
                   >
-                    Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
+                    Probar gratis 15 días <ArrowRight size={18} />
                   </TrackedCta>
                 </div>
               </div>
@@ -876,7 +877,9 @@ export default function ExpedienteMedicoLaboralPage() {
 
           <section className="guide-section container" id="cta-final">
             <div className="guide-cta">
-              <h2>Organiza los expedientes médicos laborales desde un solo lugar</h2>
+              <h2>
+                Organiza los expedientes médicos laborales desde un solo lugar
+              </h2>
               <p className="lead">
                 Mantén evaluaciones, documentos e historial relacionados con
                 cada trabajador en una plataforma desarrollada específicamente
@@ -889,7 +892,7 @@ export default function ExpedienteMedicoLaboralPage() {
                   event="trial_cta_click"
                   eventParams={{ cta_location: "closing_cta", plan: "none" }}
                 >
-                  Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
+                  Probar gratis 15 días <ArrowRight size={18} />
                 </TrackedCta>
                 <TrackedCta
                   className="button button-secondary"
@@ -897,7 +900,7 @@ export default function ExpedienteMedicoLaboralPage() {
                   event="demo_cta_click"
                   eventParams={{ cta_location: "closing_cta" }}
                 >
-                  <CalendarDays size={18} /> Agenda una demo
+                  <CalendarDays size={18} /> Agendar demo personalizada
                 </TrackedCta>
               </div>
             </div>

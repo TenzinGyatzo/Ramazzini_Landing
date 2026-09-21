@@ -8,9 +8,11 @@ const storagePrefix = "ramazzini:generate_lead:";
 export function GenerateLeadTracker({
   formType,
   conversionId,
+  campaignVariant,
 }: {
   formType: FormType;
   conversionId: string;
+  campaignVariant?: "a" | "b";
 }) {
   const sent = useRef(false);
 
@@ -32,8 +34,13 @@ export function GenerateLeadTracker({
     }
 
     sent.current = true;
-    trackEvent("generate_lead", { form_type: formType });
-  }, [conversionId, formType]);
+    trackEvent("generate_lead", {
+      form_type: formType,
+      campaign_variant: campaignVariant,
+    });
+    if (campaignVariant)
+      window.clarity?.("set", "campaign_variant", campaignVariant);
+  }, [campaignVariant, conversionId, formType]);
 
   return null;
 }

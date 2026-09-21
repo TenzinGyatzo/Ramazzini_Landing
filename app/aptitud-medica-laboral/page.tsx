@@ -178,7 +178,8 @@ const documentationFields = [
 
 const mexicoBlocks = [
   {
-    title: "NOM-030-STPS-2009 — Servicios preventivos de seguridad y salud en el trabajo",
+    title:
+      "NOM-030-STPS-2009 — Servicios preventivos de seguridad y salud en el trabajo",
     text: "Forma parte del marco general para organizar las acciones preventivas y el seguimiento de la salud de los trabajadores dentro del centro de trabajo.",
   },
   {
@@ -268,7 +269,8 @@ const conceptualCases = [
   },
   {
     title: "Condición médica en seguimiento",
-    hallazgo: "Padecimiento conocido, actualmente controlado y bajo vigilancia.",
+    hallazgo:
+      "Padecimiento conocido, actualmente controlado y bajo vigilancia.",
     puestos: [
       {
         label: "Puesto sin incompatibilidad relevante",
@@ -363,16 +365,17 @@ export default function AptitudMedicaLaboralPage() {
               <h1>Aptitud médica laboral: qué es y cómo se determina</h1>
               <div className="stack guide-prose">
                 <p className="lead">
-                  La aptitud médica laboral no se define solamente por lo que aparece 
-                  en la historia clínica o por si un estudio salió dentro o fuera de 
-                  rango. Lo importante es entender qué significan esos hallazgos para
-                  el trabajo concreto que realizará la persona.
+                  La aptitud médica laboral no se define solamente por lo que
+                  aparece en la historia clínica o por si un estudio salió
+                  dentro o fuera de rango. Lo importante es entender qué
+                  significan esos hallazgos para el trabajo concreto que
+                  realizará la persona.
                 </p>
                 <p className="lead">
-                  Una misma condición puede no tener mayor relevancia en un puesto y 
-                  ser determinante en otro. Por eso, valorar aptitud implica poner en 
-                  relación al trabajador con las tareas, exigencias y riesgos reales 
-                  de su puesto.
+                  Una misma condición puede no tener mayor relevancia en un
+                  puesto y ser determinante en otro. Por eso, valorar aptitud
+                  implica poner en relación al trabajador con las tareas,
+                  exigencias y riesgos reales de su puesto.
                 </p>
               </div>
             </div>
@@ -399,27 +402,29 @@ export default function AptitudMedicaLaboralPage() {
             </div>
             <div className="stack guide-prose">
               <p className="lead">
-                En términos prácticos, la aptitud es la conclusión a la que llega 
-                el médico después de integrar dos cosas: cómo está el trabajador y 
-                qué le exige su trabajo.
+                En términos prácticos, la aptitud es la conclusión a la que
+                llega el médico después de integrar dos cosas: cómo está el
+                trabajador y qué le exige su trabajo.
               </p>
               <p className="lead">
-                No se trata de decidir si alguien está “sano” o “enfermo”. Se trata 
-                de establecer si, con sus condiciones actuales de salud, puede realizar 
-                las funciones esenciales del puesto de forma adecuada, si necesita alguna 
-                precaución o restricción, o si hace falta completar la evaluación antes 
-                de tomar una decisión.
+                No se trata de decidir si alguien está “sano” o “enfermo”. Se
+                trata de establecer si, con sus condiciones actuales de salud,
+                puede realizar las funciones esenciales del puesto de forma
+                adecuada, si necesita alguna precaución o restricción, o si hace
+                falta completar la evaluación antes de tomar una decisión.
               </p>
               <p className="lead">
-                Por eso, el mismo diagnóstico no necesariamente conduce a la misma conclusión 
-                de aptitud en todos los trabajadores. Su importancia depende de cómo afecta —o 
-                no— las actividades que la persona necesita realizar y de las exposiciones o 
-                condiciones a las que estará sometida.
+                Por eso, el mismo diagnóstico no necesariamente conduce a la
+                misma conclusión de aptitud en todos los trabajadores. Su
+                importancia depende de cómo afecta —o no— las actividades que la
+                persona necesita realizar y de las exposiciones o condiciones a
+                las que estará sometida.
               </p>
               <aside className="guide-callout">
                 <p>
-                  La aptitud no depende de la ausencia de enfermedad, sino de lo que esa condición
-                  significa para el trabajo que la persona realiza.
+                  La aptitud no depende de la ausencia de enfermedad, sino de lo
+                  que esa condición significa para el trabajo que la persona
+                  realiza.
                 </p>
               </aside>
             </div>
@@ -430,20 +435,23 @@ export default function AptitudMedicaLaboralPage() {
               <span className="section-kicker">En la práctica</span>
               <h2>Estado de salud y aptitud laboral no son lo mismo</h2>
               <p className="lead">
-                En una evaluación podemos encontrar diagnósticos conocidos, síntomas,
-                antecedentes o resultados fuera de rango. Pero el hallazgo médico, por sí solo,
-                no resuelve la aptitud. El siguiente paso es valorar qué importancia
-                tiene realmente para las actividades y condiciones del puesto.
+                En una evaluación podemos encontrar diagnósticos conocidos,
+                síntomas, antecedentes o resultados fuera de rango. Pero el
+                hallazgo médico, por sí solo, no resuelve la aptitud. El
+                siguiente paso es valorar qué importancia tiene realmente para
+                las actividades y condiciones del puesto.
               </p>
             </div>
             <div className="before-after">
               <article className="card">
-                <h3>Tener una enfermedad no significa automáticamente ser no apto</h3>
+                <h3>
+                  Tener una enfermedad no significa automáticamente ser no apto
+                </h3>
                 <p className="lead">
-                  Una condición bien controlada puede no interferir en absoluto con el
-                  trabajo. En otros casos puede requerir seguimiento, alguna precaución
-                  o una restricción concreta, sin que eso necesariamente impida
-                  desempeñar el trabajo.
+                  Una condición bien controlada puede no interferir en absoluto
+                  con el trabajo. En otros casos puede requerir seguimiento,
+                  alguna precaución o una restricción concreta, sin que eso
+                  necesariamente impida desempeñar el trabajo.
                 </p>
               </article>
               <article className="card good">
@@ -452,28 +460,32 @@ export default function AptitudMedicaLaboralPage() {
                   trabajo
                 </h3>
                 <p className="lead">
-                  Hay puestos en los que ciertas capacidades físicas, sensoriales o
-                  funcionales tienen un peso especial. Una evaluación sin hallazgos
-                  importantes no sustituye el análisis de lo que ese trabajo exige.
+                  Hay puestos en los que ciertas capacidades físicas,
+                  sensoriales o funcionales tienen un peso especial. Una
+                  evaluación sin hallazgos importantes no sustituye el análisis
+                  de lo que ese trabajo exige.
                 </p>
               </article>
             </div>
             <p className="lead guide-follow-copy">
-              Por eso, un mismo hallazgo puede ser poco relevante para un puesto y
-              justificar una precaución, restricción o valoración adicional en otro.
+              Por eso, un mismo hallazgo puede ser poco relevante para un puesto
+              y justificar una precaución, restricción o valoración adicional en
+              otro.
             </p>
           </section>
 
           <section className="guide-section container" id="que-se-considera">
             <div className="section-head">
               <span className="section-kicker">Elementos de valoración</span>
-              <h2>¿Qué se considera para determinar la aptitud médica laboral?</h2>
+              <h2>
+                ¿Qué se considera para determinar la aptitud médica laboral?
+              </h2>
               <p className="lead">
-                No hay una batería de estudios que, por sí sola, determine la aptitud.
-                La información que realmente importa cambia según el puesto, sus
-                exigencias y los riesgos a los que estará expuesto el trabajador.
-                La valoración consiste en integrar esos elementos y dar a cada hallazgo
-                el peso que tiene en ese contexto.
+                No hay una batería de estudios que, por sí sola, determine la
+                aptitud. La información que realmente importa cambia según el
+                puesto, sus exigencias y los riesgos a los que estará expuesto
+                el trabajador. La valoración consiste en integrar esos elementos
+                y dar a cada hallazgo el peso que tiene en ese contexto.
               </p>
             </div>
             <ol className="guide-factor-list">
@@ -494,10 +506,10 @@ export default function AptitudMedicaLaboralPage() {
               <span className="section-kicker">El contexto importa</span>
               <h2>La aptitud se valora para un trabajo concreto</h2>
               <p className="lead">
-                Un hallazgo médico adquiere relevancia laboral cuando lo ponemos frente
-                a las tareas, exigencias y riesgos reales del puesto. Sin ese contexto,
-                podemos describir el estado de salud del trabajador, pero difícilmente
-                valorar su aptitud con precisión.
+                Un hallazgo médico adquiere relevancia laboral cuando lo ponemos
+                frente a las tareas, exigencias y riesgos reales del puesto. Sin
+                ese contexto, podemos describir el estado de salud del
+                trabajador, pero difícilmente valorar su aptitud con precisión.
               </p>
             </div>
             <GuideContextTriad
@@ -510,10 +522,10 @@ export default function AptitudMedicaLaboralPage() {
               caption="La aptitud se determina al poner en relación el trabajador, el puesto y los riesgos."
             />
             <p className="lead guide-follow-copy">
-              Por eso, una conclusión de aptitud tiene sentido respecto de un puesto
-              determinado. El mismo trabajador, con los mismos hallazgos, puede requerir
-              una valoración diferente si cambian sus funciones o las condiciones de
-              exposición.
+              Por eso, una conclusión de aptitud tiene sentido respecto de un
+              puesto determinado. El mismo trabajador, con los mismos hallazgos,
+              puede requerir una valoración diferente si cambian sus funciones o
+              las condiciones de exposición.
             </p>
           </section>
 
@@ -608,13 +620,14 @@ export default function AptitudMedicaLaboralPage() {
                   no qué diagnóstico tiene el trabajador.
                 </p>
               </aside>
-              <h3>Restricción y recomendación no son necesariamente lo mismo</h3>
+              <h3>
+                Restricción y recomendación no son necesariamente lo mismo
+              </h3>
               <p className="lead">
                 Una restricción establece un límite que debe respetarse para
                 realizar el trabajo en las condiciones evaluadas. Una
-                recomendación, en cambio, puede orientar prevención,
-                seguimiento o cuidado sin necesariamente modificar las
-                funciones del puesto.
+                recomendación, en cambio, puede orientar prevención, seguimiento
+                o cuidado sin necesariamente modificar las funciones del puesto.
               </p>
               <p className="lead">
                 La diferencia parece pequeña, pero en la práctica es importante:
@@ -694,7 +707,9 @@ export default function AptitudMedicaLaboralPage() {
             </div>
             <div className="before-after">
               <article className="card">
-                <h3>Información clínica utilizada para determinar la aptitud</h3>
+                <h3>
+                  Información clínica utilizada para determinar la aptitud
+                </h3>
                 <p className="lead">
                   Es la información que el médico necesita para interpretar los
                   hallazgos y fundamentar su conclusión: antecedentes,
@@ -727,9 +742,9 @@ export default function AptitudMedicaLaboralPage() {
                 <span className="section-kicker">Contexto local</span>
                 <h2>Aptitud médica laboral en México</h2>
                 <p className="lead">
-                  En México no existe una sola Norma Oficial Mexicana que
-                  defina una clasificación universal de aptitud aplicable a
-                  todos los trabajadores, puestos y actividades.
+                  En México no existe una sola Norma Oficial Mexicana que defina
+                  una clasificación universal de aptitud aplicable a todos los
+                  trabajadores, puestos y actividades.
                 </p>
                 <p className="lead">
                   En la práctica, la valoración debe construirse a partir del
@@ -756,7 +771,9 @@ export default function AptitudMedicaLaboralPage() {
 
           <section className="guide-section container" id="errores">
             <div className="section-head">
-              <span className="section-kicker">Errores que cambian la decisión</span>
+              <span className="section-kicker">
+                Errores que cambian la decisión
+              </span>
               <h2>Errores frecuentes al determinar o documentar la aptitud</h2>
             </div>
             <ol className="guide-errors">
@@ -771,7 +788,9 @@ export default function AptitudMedicaLaboralPage() {
 
           <section className="guide-section container" id="ejemplos">
             <div className="section-head">
-              <span className="section-kicker">El contexto cambia la lectura</span>
+              <span className="section-kicker">
+                El contexto cambia la lectura
+              </span>
               <h2>El mismo hallazgo puede llevar a conclusiones diferentes</h2>
               <p className="lead">
                 Estos ejemplos no pretenden establecer criterios de aptitud.
@@ -856,7 +875,7 @@ export default function AptitudMedicaLaboralPage() {
                     event="demo_cta_click"
                     eventParams={{ cta_location: "guide_cta" }}
                   >
-                    <CalendarDays size={18} /> Agenda una demo
+                    <CalendarDays size={18} /> Agendar demo personalizada
                   </TrackedCta>
                   <TrackedCta
                     className="button button-secondary"
@@ -864,7 +883,7 @@ export default function AptitudMedicaLaboralPage() {
                     event="trial_cta_click"
                     eventParams={{ cta_location: "guide_cta", plan: "none" }}
                   >
-                    Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
+                    Probar gratis 15 días <ArrowRight size={18} />
                   </TrackedCta>
                 </div>
               </div>
@@ -914,8 +933,7 @@ export default function AptitudMedicaLaboralPage() {
           <section className="guide-section container" id="cta-final">
             <div className="guide-cta">
               <h2>
-                Documenta la aptitud sin separarla del expediente del
-                trabajador
+                Documenta la aptitud sin separarla del expediente del trabajador
               </h2>
               <p className="lead">
                 Mantén la evaluación, el historial y los documentos de aptitud
@@ -928,7 +946,7 @@ export default function AptitudMedicaLaboralPage() {
                   event="trial_cta_click"
                   eventParams={{ cta_location: "closing_cta", plan: "none" }}
                 >
-                  Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
+                  Probar gratis 15 días <ArrowRight size={18} />
                 </TrackedCta>
                 <TrackedCta
                   className="button button-secondary"
@@ -936,7 +954,7 @@ export default function AptitudMedicaLaboralPage() {
                   event="demo_cta_click"
                   eventParams={{ cta_location: "closing_cta" }}
                 >
-                  <CalendarDays size={18} /> Agenda una demo
+                  <CalendarDays size={18} /> Agendar demo personalizada
                 </TrackedCta>
               </div>
             </div>
