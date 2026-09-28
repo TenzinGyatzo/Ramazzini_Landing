@@ -6,23 +6,23 @@ import { useEffect, useState } from "react";
 const steps = [
   {
     label: "Empresa",
-    src: "/screenshots/clientes.jpeg",
-    alt: "Listado de empresas en Ramazzini",
+    src: "/campaign-empresa.png",
+    alt: "Gestión de empresas en Ramazzini",
   },
   {
     label: "Trabajador",
-    src: "/screenshots/alta-trabajador.jpeg",
-    alt: "Alta de un trabajador en Ramazzini",
+    src: "/campaign-expediente.png",
+    alt: "Expediente médico de un trabajador en Ramazzini",
   },
   {
     label: "Evaluación",
-    src: "/capturas/AudiometrÃ_a-Clara.jpg",
+    src: "/campaign-evaluacion.png",
     alt: "Evaluación de audiometría dentro de Ramazzini",
   },
   {
     label: "PDF",
-    src: "/capturas/Historia-Clara.jpg",
-    alt: "Vista previa de una historia clínica lista para generar en PDF",
+    src: "/campaign-informe.png",
+    alt: "Informe longitudinal audiométrico generado por Ramazzini",
   },
 ];
 
