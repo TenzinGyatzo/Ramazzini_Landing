@@ -117,6 +117,7 @@ export function CalInline() {
       config: { layout: "month_view", theme: "dark" },
     });
     namespacedCal("ui", {
+      theme: "dark",
       hideEventTypeDetails: false,
       layout: "month_view",
     });
