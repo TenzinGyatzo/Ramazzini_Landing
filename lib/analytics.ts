@@ -25,6 +25,7 @@ export type AnalyticsEventMap = {
   };
   demo_form_start: { form_type: FormType; campaign_variant?: "a" | "b" };
   generate_lead: { form_type: FormType; campaign_variant?: "a" | "b" };
+  demo_booked: { campaign_variant?: "a" | "b" };
   trial_cta_click: { cta_location: TrialCtaLocation; plan: Plan | "none" };
   whatsapp_click: { cta_location: WhatsAppCtaLocation };
 };
