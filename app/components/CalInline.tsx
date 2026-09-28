@@ -114,9 +114,10 @@ export function CalInline() {
     namespacedCal("inline", {
       elementOrSelector: "#ramazzini-cal-inline",
       calLink,
-      config: { layout: "month_view" },
+      config: { layout: "month_view", theme: "dark" },
     });
     namespacedCal("ui", {
+      theme: "dark",
       hideEventTypeDetails: false,
       layout: "month_view",
     });
