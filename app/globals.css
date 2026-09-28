@@ -449,8 +449,13 @@ img {
 
 .home-hero-copy .microcopy {
   max-width: 55ch;
-  margin-inline: auto;
+  margin: 24px auto 0;
   line-height: 1.45;
+}
+
+.home-hero-copy .hero-proof {
+  margin: 32px auto 0;
+  text-align: center;
 }
 
 .product-loop {
