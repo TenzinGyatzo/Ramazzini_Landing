@@ -39,8 +39,9 @@ export async function POST(request: NextRequest) {
   }
 
   const source = readField(lead, "source");
+  const formType = readField(lead, "form_type");
   const requiredFields =
-    source === "Campaign lead"
+    source === "Campaign lead" || formType === "quick"
       ? contactFields
       : [...contactFields, ...operationFields];
 
@@ -271,7 +272,6 @@ export async function POST(request: NextRequest) {
     return redirectToThanks(request, "error");
   }
 
-  const formType = readField(lead, "form_type");
   const campaignVariant =
     source === "Campaign lead"
       ? request.cookies.get("ramazzini_campaign_variant")?.value
