@@ -23,7 +23,6 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { IsoMark } from "./components/IsoMark";
 import { ScreensShowcase } from "./components/ScreensShowcase";
-import { ProductLoop } from "./components/ProductLoop";
 import { TrackedCta } from "./components/TrackedCta";
 import { TrackedForm } from "./components/TrackedForm";
 import type { Plan as PlanId } from "@/lib/analytics";
@@ -676,7 +675,6 @@ export default function Home() {
                 Demo para equipos; prueba gratis para empezar por tu cuenta.
               </p>
             </div>
-            <ProductLoop />
           </div>
         </section>
 
