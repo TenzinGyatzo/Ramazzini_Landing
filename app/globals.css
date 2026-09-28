@@ -421,27 +421,35 @@ img {
 }
 
 .home-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
-  align-items: center;
-  gap: 42px;
+  display: block;
+}
+
+.home-hero-copy {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .home-hero-copy h1 {
-  font-size: clamp(2.5rem, 4.3vw, 4.7rem);
+  max-width: 960px;
+  margin-inline: auto;
+  font-size: clamp(3rem, 5.4vw, 5rem);
+  text-wrap: balance;
 }
 
 .home-hero-copy .hero-copy {
-  margin: 22px 0 0;
+  max-width: 720px;
+  margin: 22px auto 0;
 }
 
 .home-hero-copy .hero-actions {
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 26px;
 }
 
 .home-hero-copy .microcopy {
   max-width: 55ch;
+  margin-inline: auto;
   line-height: 1.45;
 }
 
