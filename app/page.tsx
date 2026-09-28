@@ -674,6 +674,15 @@ export default function Home() {
               >
                 Demo para equipos; prueba gratis para empezar por tu cuenta.
               </p>
+              <div
+                className="hero-proof hero-reveal"
+                style={{ animationDelay: "800ms" }}
+                aria-label="Indicadores de confianza"
+              >
+                Ramazzini ha generado más de 36 mil informes para más de 7 mil
+                trabajadores de más de 250 empresas
+              </div>
+              <QuickLeadForm />
             </div>
           </div>
         </section>
@@ -1252,6 +1261,76 @@ export default function Home() {
         <Image src="/whatsapp-logo.svg" alt="" width={30} height={30} />
       </TrackedCta>
     </div>
+  );
+}
+
+function QuickLeadForm() {
+  return (
+    <TrackedForm
+      className="quick-lead-form hero-reveal"
+      style={{ animationDelay: "1080ms" }}
+      action="/api/demo"
+      method="post"
+      aria-label="Agendar demo rápida"
+      formType="quick"
+    >
+      <div className="quick-lead-copy">
+        <strong>Lleva esta eficiencia a tu operación</strong>
+        <span>
+          Déjanos tus datos y te contactaremos para coordinar una demo
+          personalizada.
+        </span>
+      </div>
+      <label htmlFor="quick-name" className="sr-only">
+        Nombre
+      </label>
+      <input
+        id="quick-name"
+        name="name"
+        placeholder="Nombre"
+        autoComplete="name"
+        maxLength={100}
+        required
+      />
+      <label htmlFor="quick-email" className="sr-only">
+        Correo electrónico
+      </label>
+      <input
+        id="quick-email"
+        name="email"
+        type="email"
+        placeholder="Correo"
+        autoComplete="email"
+        maxLength={254}
+        required
+      />
+      <label htmlFor="quick-phone" className="sr-only">
+        WhatsApp
+      </label>
+      <input
+        id="quick-phone"
+        name="phone"
+        placeholder="WhatsApp"
+        autoComplete="tel"
+        maxLength={30}
+        required
+      />
+      <input type="hidden" name="source" value="Hero video lead" />
+      <input type="hidden" name="form_type" value="quick" />
+      <input
+        className="form-honeypot"
+        type="text"
+        name="form_confirm"
+        tabIndex={-1}
+        autoComplete="new-password"
+        data-lpignore="true"
+        data-1p-ignore="true"
+        aria-hidden="true"
+      />
+      <button className="button button-primary" type="submit">
+        Quiero mi demo <ArrowRight size={18} />
+      </button>
+    </TrackedForm>
   );
 }
 
