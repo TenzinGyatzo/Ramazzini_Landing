@@ -27,6 +27,8 @@ export default async function GraciasPage({ searchParams }: GraciasPageProps) {
   const status = firstValue(params.estado);
   const formType = firstValue(params.form_type);
   const conversionId = firstValue(params.conversion_id);
+  const campaignVariant = firstValue(params.campaign_variant);
+  const isCampaign = firstValue(params.origen) === "campana";
   const hasError = status === "error" || status === "limite";
   const isIncomplete = status === "incompleto";
   const waMessage = encodeURIComponent(
@@ -58,7 +60,10 @@ export default async function GraciasPage({ searchParams }: GraciasPageProps) {
                   : "Puedes intentarlo nuevamente o escribirnos por WhatsApp para que te atendamos directamente."}
             </p>
             <div className="hero-actions">
-              <Link className="button button-primary" href="/#demo-form">
+              <Link
+                className="button button-primary"
+                href={isCampaign ? "/campana/#agendar" : "/#demo-form"}
+              >
                 <ArrowLeft size={18} /> Volver al formulario
               </Link>
               <TrackedCta
@@ -81,7 +86,15 @@ export default async function GraciasPage({ searchParams }: GraciasPageProps) {
       {status === "enviado" &&
       isFormType(formType) &&
       isConversionId(conversionId) ? (
-        <GenerateLeadTracker formType={formType} conversionId={conversionId} />
+        <GenerateLeadTracker
+          formType={formType}
+          conversionId={conversionId}
+          campaignVariant={
+            campaignVariant === "a" || campaignVariant === "b"
+              ? campaignVariant
+              : undefined
+          }
+        />
       ) : null}
       <div className="container thank-you-booking-panel">
         <section className="thank-you-intro">

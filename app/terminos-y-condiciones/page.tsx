@@ -145,6 +145,7 @@ const termsHtml = `
 <li>Tiempo de duración en una página de Internet.</li>
 <li>Tipo de navegador que utiliza el USUARIO.</li>
 </ul>
+<p>En las páginas públicas usamos Microsoft Clarity para analizar cómo se navega por el sitio mediante mapas de calor y grabaciones de sesión. Los campos de los formularios se ocultan en esas grabaciones. En la página de campaña usamos una cookie llamada <code>ramazzini_campaign_variant</code>, que dura 30 días y recuerda cuál de las dos versiones de la página se mostró al visitante.</p>
 </section>
 <section class="terms-section">
 <h5 id="capitulo-xiii-confidencialidad">CAPÍTULO XIII. CONFIDENCIALIDAD</h5>

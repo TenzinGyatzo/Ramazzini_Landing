@@ -389,8 +389,8 @@ export default function SoftwareSaludOcupacionalPage() {
             </h1>
             <p className="hero-copy">
               Realiza evaluaciones médicas, mantén organizados los expedientes
-              de tus trabajadores y genera documentos profesionales sin
-              depender de Word, Excel y carpetas dispersas.
+              de tus trabajadores y genera documentos profesionales sin depender
+              de Word, Excel y carpetas dispersas.
             </p>
             <div className="hero-actions">
               <TrackedCta
@@ -399,7 +399,7 @@ export default function SoftwareSaludOcupacionalPage() {
                 event="demo_cta_click"
                 eventParams={{ cta_location: "hero" }}
               >
-                <CalendarDays size={18} /> Agenda una demo
+                <CalendarDays size={18} /> Agendar demo personalizada
               </TrackedCta>
               <TrackedCta
                 className="button button-secondary"
@@ -449,8 +449,8 @@ export default function SoftwareSaludOcupacionalPage() {
               </p>
               <p className="aeo-answer">
                 La diferencia no está solamente en sustituir papel por
-                pantallas, sino en reducir el trabajo que existe alrededor de
-                la evaluación: volver a capturar datos, buscar antecedentes,
+                pantallas, sino en reducir el trabajo que existe alrededor de la
+                evaluación: volver a capturar datos, buscar antecedentes,
                 preparar documentos y mantener organizado el historial.
               </p>
             </div>
@@ -482,9 +482,9 @@ export default function SoftwareSaludOcupacionalPage() {
             <span className="section-kicker">Operación fragmentada</span>
             <h2>¿Qué problemas resuelve un software de salud ocupacional?</h2>
             <p className="lead">
-              Word y Excel pueden funcionar sorprendentemente bien durante
-              mucho tiempo. El problema aparece cuando cada nueva evaluación
-              agrega otro documento que nombrar, guardar, localizar y volver a
+              Word y Excel pueden funcionar sorprendentemente bien durante mucho
+              tiempo. El problema aparece cuando cada nueva evaluación agrega
+              otro documento que nombrar, guardar, localizar y volver a
               relacionar con el trabajador correcto. Conforme aumenta el
               volumen, una parte cada vez mayor del trabajo termina ocurriendo
               alrededor de la evaluación y no durante la evaluación misma.
@@ -577,9 +577,8 @@ export default function SoftwareSaludOcupacionalPage() {
               correctamente las necesidades de atención médica convencional. La
               diferencia aparece en el flujo de trabajo: un sistema
               especializado ya parte de trabajadores, empresas, centros de
-              trabajo, evaluaciones y documentos laborales, en lugar de
-              obligar al usuario a adaptar una herramienta diseñada para otro
-              propósito.
+              trabajo, evaluaciones y documentos laborales, en lugar de obligar
+              al usuario a adaptar una herramienta diseñada para otro propósito.
             </p>
           </div>
         </section>
@@ -601,10 +600,7 @@ export default function SoftwareSaludOcupacionalPage() {
                 desarrollado con la participación directa de profesionales de
                 salud ocupacional, y sus expedientes, evaluaciones y documentos
                 parten de la forma en que se realizan las{" "}
-                <a
-                  className="guide-inline-link"
-                  href="/examen-medico-laboral/"
-                >
+                <a className="guide-inline-link" href="/examen-medico-laboral/">
                   evaluaciones médicas laborales
                 </a>
                 .
@@ -612,8 +608,8 @@ export default function SoftwareSaludOcupacionalPage() {
               <p className="lead">
                 El trabajador se registra una vez. A partir de ahí, su
                 información puede reutilizarse en historias clínicas,
-                exploraciones, aptitudes, certificados y otras evaluaciones
-                sin reconstruir cada documento desde cero.
+                exploraciones, aptitudes, certificados y otras evaluaciones sin
+                reconstruir cada documento desde cero.
               </p>
               <TrackedCta
                 className="button button-primary"
@@ -621,7 +617,7 @@ export default function SoftwareSaludOcupacionalPage() {
                 event="demo_cta_click"
                 eventParams={{ cta_location: "guide_cta" }}
               >
-                Conoce Ramazzini en una demo <ArrowRight size={18} />
+                Agendar demo personalizada <ArrowRight size={18} />
               </TrackedCta>
             </div>
             <div className="mock-window screenshot-window">
@@ -663,9 +659,9 @@ export default function SoftwareSaludOcupacionalPage() {
             <span className="section-kicker">Flujo de trabajo</span>
             <h2>¿Cómo funciona Ramazzini?</h2>
             <p className="lead">
-              El flujo busca que la información se capture durante la
-              evaluación y continúe siendo útil después, tanto para el
-              expediente como para los documentos que se generan.
+              El flujo busca que la información se capture durante la evaluación
+              y continúe siendo útil después, tanto para el expediente como para
+              los documentos que se generan.
             </p>
           </div>
           <div className="steps">
@@ -717,7 +713,7 @@ export default function SoftwareSaludOcupacionalPage() {
               event="trial_cta_click"
               eventParams={{ cta_location: "closing_cta", plan: "none" }}
             >
-              Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
+              Probar gratis 15 días <ArrowRight size={18} />
             </TrackedCta>
             <TrackedCta
               className="button button-secondary"
@@ -725,7 +721,7 @@ export default function SoftwareSaludOcupacionalPage() {
               event="demo_cta_click"
               eventParams={{ cta_location: "closing_cta" }}
             >
-              <CalendarDays size={18} /> Agenda una demo
+              <CalendarDays size={18} /> Agendar demo personalizada
             </TrackedCta>
           </div>
         </section>

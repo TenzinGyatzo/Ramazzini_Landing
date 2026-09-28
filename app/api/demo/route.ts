@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
 
   const source = readField(lead, "source");
   const requiredFields =
-    source === "Hero video lead"
+    source === "Campaign lead"
       ? contactFields
       : [...contactFields, ...operationFields];
 
@@ -87,8 +87,8 @@ export async function POST(request: NextRequest) {
     const volume = readField(lead, "volume");
     const message = readField(lead, "message");
     const formOriginLabel =
-      source === "Hero video lead"
-        ? "Formulario compacto"
+      source === "Campaign lead"
+        ? `Campaña variante ${request.cookies.get("ramazzini_campaign_variant")?.value?.toUpperCase() || "sin asignar"}`
         : "Formulario completo";
     const bookingUrl =
       process.env.NEXT_PUBLIC_CAL_URL ||
@@ -272,11 +272,22 @@ export async function POST(request: NextRequest) {
   }
 
   const formType = readField(lead, "form_type");
+  const campaignVariant =
+    source === "Campaign lead"
+      ? request.cookies.get("ramazzini_campaign_variant")?.value
+      : undefined;
   return redirectToThanks(
     request,
     "enviado",
     isFormType(formType)
-      ? { formType, conversionId: crypto.randomUUID() }
+      ? {
+          formType,
+          conversionId: crypto.randomUUID(),
+          campaignVariant:
+            campaignVariant === "a" || campaignVariant === "b"
+              ? campaignVariant
+              : undefined,
+        }
       : undefined,
   );
 }
@@ -298,7 +309,11 @@ function isValidPhone(phone: string) {
 function redirectToThanks(
   request: NextRequest,
   status: string,
-  extras?: { formType: FormType; conversionId: string },
+  extras?: {
+    formType: FormType;
+    conversionId: string;
+    campaignVariant?: "a" | "b";
+  },
 ) {
   const origin =
     process.env.NODE_ENV === "production"
@@ -306,10 +321,20 @@ function redirectToThanks(
       : request.nextUrl.origin;
   const url = new URL("/gracias", origin);
   url.searchParams.set("estado", status);
+  const referer = request.headers.get("referer");
+  if (
+    referer &&
+    URL.canParse(referer) &&
+    new URL(referer).pathname.replace(/\/$/, "") === "/campana"
+  ) {
+    url.searchParams.set("origen", "campana");
+  }
 
   if (status === "enviado" && extras) {
     url.searchParams.set("form_type", extras.formType);
     url.searchParams.set("conversion_id", extras.conversionId);
+    if (extras.campaignVariant)
+      url.searchParams.set("campaign_variant", extras.campaignVariant);
   }
 
   return NextResponse.redirect(url, 303);

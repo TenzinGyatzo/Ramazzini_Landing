@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Kanit } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
+import Script from "next/script";
 import "./globals.css";
 
 const kanit = Kanit({
@@ -17,6 +18,10 @@ const title = "Ramazzini | Software de Salud Ocupacional para Equipos Médicos";
 const description =
   "Realiza exámenes médicos laborales, organiza expedientes por empresa y trabajador, y genera informes PDF profesionales. Agenda una demo o prueba gratis 15 días.";
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MPW2CTVB";
+const configuredClarityId = process.env.NEXT_PUBLIC_CLARITY_ID || "ylwa6auqar";
+const clarityId = /^[a-z0-9]+$/i.test(configuredClarityId)
+  ? configuredClarityId
+  : "ylwa6auqar";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -132,6 +137,10 @@ export default function RootLayout({
     <html lang="es-MX" className={kanit.variable} suppressHydrationWarning>
       {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body suppressHydrationWarning>
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+        >{`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","${clarityId}");`}</Script>
         {gtmId ? (
           <noscript>
             <iframe

@@ -294,7 +294,7 @@ const faqs = [
   ],
   [
     "¿Ramazzini cuenta con la certificación conforme a la NOM-024-SSA3-2012?",
-    "Ramazzini estará certificado pronto. La plataforma ya cumple con los requisitos aplicables y actualmente se encuentra en proceso formal de verificación. Una vez obtenida la certificación, lo anunciaremos a través de esta página y de los medios oficiales de Ramazzini.",
+    "Ramazzini incorpora controles y funciones alineados con requisitos aplicables de la NOM-024-SSA3-2012. La certificación todavía no ha sido obtenida; el proceso de evaluación continúa.",
   ],
   [
     "¿Cómo protegen la información?",
@@ -626,73 +626,64 @@ export default function Home() {
       <Header />
       <main>
         <section className="hero">
-          <div className="container hero-single">
-            <span
-              className="eyebrow hero-reveal"
-              style={{ animationDelay: "0ms" }}
-            >
-              <HeartPulse size={16} /> Software de salud ocupacional
-            </span>
-            <h1 className="hero-reveal" style={{ animationDelay: "120ms" }}>
-            El programa para realizar exámenes médicos laborales que agiliza tu operación en minutos.
-            </h1>
-            <p
-              className="hero-copy hero-reveal"
-              style={{ animationDelay: "240ms" }}
-            >
-              Captura los datos una sola vez, organiza expedientes por empresa y
-              genera informes PDF con presentación profesional. Ramazzini te
-              ayuda a trabajar con mayor rapidez y orden, atender más
-              evaluaciones y hacer crecer tu servicio de salud ocupacional.
-            </p>
-            <HeroVideo />
-            <ul className="hero-bullets">
-              <li className="hero-reveal" style={{ animationDelay: "360ms" }}>
-                <CheckCircle2 size={18} /> Demo personalizada de 45 minutos
-              </li>
-              <li className="hero-reveal" style={{ animationDelay: "440ms" }}>
-                <CheckCircle2 size={18} /> Prueba gratis 15 días, sin tarjeta
-              </li>
-              <li className="hero-reveal" style={{ animationDelay: "520ms" }}>
-                <CheckCircle2 size={18} /> Especializado en salud ocupacional
-              </li>
-            </ul>
-            <div
-              className="hero-actions hero-reveal"
-              style={{ animationDelay: "620ms" }}
-            >
-              <TrackedCta
-                className="button button-primary"
-                href="#demo"
-                event="demo_cta_click"
-                eventParams={{ cta_location: "hero" }}
+          <div className="container home-hero-grid">
+            <div className="home-hero-copy">
+              <span
+                className="eyebrow hero-reveal"
+                style={{ animationDelay: "0ms" }}
               >
-                <CalendarDays size={18} /> Agenda una demo de 45 minutos
-              </TrackedCta>
-              <TrackedCta
-                className="button button-secondary"
-                href={appUrl}
-                event="trial_cta_click"
-                eventParams={{ cta_location: "hero", plan: "none" }}
+                <HeartPulse size={16} /> Software de salud ocupacional
+              </span>
+              <h1 className="hero-reveal" style={{ animationDelay: "120ms" }}>
+                Exámenes médicos laborales, del expediente al PDF
+              </h1>
+              <p
+                className="hero-copy hero-reveal"
+                style={{ animationDelay: "240ms" }}
               >
-                Empieza gratis 15 días <ArrowRight size={18} />
-              </TrackedCta>
+                Evalúa trabajadores, organiza expedientes y entrega informes en
+                un sistema clínico creado para salud ocupacional.
+              </p>
+              <div
+                className="hero-actions hero-reveal"
+                style={{ animationDelay: "620ms" }}
+              >
+                <TrackedCta
+                  className="button button-primary"
+                  href="#demo"
+                  event="demo_cta_click"
+                  eventParams={{ cta_location: "hero" }}
+                >
+                  <CalendarDays size={18} /> Agendar demo personalizada
+                </TrackedCta>
+                <TrackedCta
+                  className="button button-secondary"
+                  href={appUrl}
+                  event="trial_cta_click"
+                  eventParams={{ cta_location: "hero", plan: "none" }}
+                >
+                  Probar gratis 15 días <ArrowRight size={18} />
+                </TrackedCta>
+                <a className="button button-ghost" href="#como-funciona">
+                  Ver cómo funciona
+                </a>
+              </div>
+              <p
+                className="microcopy hero-reveal"
+                style={{ animationDelay: "720ms" }}
+              >
+                Demo para equipos; prueba gratis para empezar por tu cuenta.
+              </p>
+              <div
+                className="hero-proof hero-reveal"
+                style={{ animationDelay: "800ms" }}
+                aria-label="Indicadores de confianza"
+              >
+                Ramazzini ha generado más de 36 mil informes para más de 7 mil
+                trabajadores de más de 250 empresas
+              </div>
+              <QuickLeadForm />
             </div>
-            <p
-              className="microcopy hero-reveal"
-              style={{ animationDelay: "720ms" }}
-            >
-              Sin tarjeta. Sin permanencia. Cancela cuando quieras.
-            </p>
-            <div
-              className="hero-proof hero-reveal"
-              style={{ animationDelay: "800ms" }}
-              aria-label="Indicadores de confianza"
-            >
-              Ramazzini ha generado más de 36 mil informes para más de 7 mil
-              trabajadores de más de 250 empresas
-            </div>
-            <QuickLeadForm />
           </div>
         </section>
 
@@ -723,11 +714,11 @@ export default function Home() {
 
         <section
           className="social-proof container"
-          aria-label="Marcas que trabajan con Ramazzini"
+          aria-label="Clientes de Ramazzini"
         >
           <div className="social-proof-copy">
-            <span className="section-kicker">Prueba social real</span>
-            <h2>Marcas que trabajan con Ramazzini</h2>
+            <span className="section-kicker">Clientes</span>
+            <h2>Equipos que ya usan Ramazzini</h2>
           </div>
           <div className="logo-cloud">
             {brandLogos.map((brand) => (
@@ -751,16 +742,16 @@ export default function Home() {
         >
           <h2 className="aeo-question">¿Qué es Ramazzini?</h2>
           <p className="aeo-answer">
-            <strong>Ramazzini</strong> es un software de salud ocupacional
-            y medicina laboral para médicos, clínicas y servicios médicos de empresa. 
-            Permite realizar{" "}
+            <strong>Ramazzini</strong> es un software de salud ocupacional y
+            medicina laboral para médicos, clínicas y servicios médicos de
+            empresa. Permite realizar{" "}
             <a className="guide-inline-link" href="/examen-medico-laboral/">
               exámenes médicos laborales
             </a>
-            , organizar expedientes por empresa
-            centro de trabajo y trabajador, y generar informes profesionales en PDF.
-            Funciona desde cualquier navegador, sin instalación, y centraliza toda
-            tu operación en un solo lugar. Pruébalo gratis durante 15 días, sin tarjeta.
+            , organizar expedientes por empresa centro de trabajo y trabajador,
+            y generar informes profesionales en PDF. Funciona desde cualquier
+            navegador, sin instalación, y centraliza toda tu operación en un
+            solo lugar. Pruébalo gratis durante 15 días, sin tarjeta.
           </p>
           <p className="aeo-more">
             <a href="/software-salud-ocupacional/">
@@ -821,7 +812,10 @@ export default function Home() {
           <IsoMark className="section-sigil section-sigil-right" />
           <div className="section-head center">
             <span className="section-kicker">Problema y solución</span>
-            <h2>¿Todavía gestionas exámenes médicos laborales en Word, Excel o sistemas poco especializados?</h2>
+            <h2>
+              ¿Todavía gestionas exámenes médicos laborales en Word, Excel o
+              sistemas poco especializados?
+            </h2>
             <p className="lead">
               Ya sea que trabajes con Word, Excel y carpetas dispersas, o con un
               sistema complicado y poco amigable, Ramazzini te permite gestionar
@@ -892,8 +886,14 @@ export default function Home() {
           <IsoMark className="section-sigil section-sigil-left" />
           <div className="section-head center">
             <span className="section-kicker">Flujo de trabajo</span>
-            <h2>Cómo funciona Ramazzini para realizar exámenes médicos laborales</h2>
-            <p>El proceso se divide en tres pasos: captura la evaluación, organiza automáticamente el expediente y genera los informes listos para entregar.</p>
+            <h2>
+              Cómo funciona Ramazzini para realizar exámenes médicos laborales
+            </h2>
+            <p>
+              El proceso se divide en tres pasos: captura la evaluación,
+              organiza automáticamente el expediente y genera los informes
+              listos para entregar.
+            </p>
           </div>
           <div className="steps">
             <Step
@@ -943,7 +943,7 @@ export default function Home() {
                 event="demo_cta_click"
                 eventParams={{ cta_location: "product" }}
               >
-                Quiero verlo en acción <ArrowRight size={18} />
+                Agendar demo personalizada <ArrowRight size={18} />
               </TrackedCta>
             </div>
             <div className="mock-window screenshot-window">
@@ -1136,8 +1136,8 @@ export default function Home() {
           </div>
           <div className="pricing-demo-cta">
             <p>
-              ¿Prefieres conocer Ramazzini antes de probarlo? Agenda una demo
-              personalizada.
+              ¿Manejas varias empresas o formatos propios? En la demo revisamos
+              tu caso.
             </p>
             <TrackedCta
               className="button button-secondary"
@@ -1145,7 +1145,7 @@ export default function Home() {
               event="demo_cta_click"
               eventParams={{ cta_location: "pricing" }}
             >
-              Agendar demo
+              Agendar demo personalizada
             </TrackedCta>
           </div>
         </section>
@@ -1162,18 +1162,17 @@ export default function Home() {
                 <p>
                   {question.includes("NOM-024-SSA3-2012") ? (
                     <>
-                      Ramazzini estará certificado pronto. La plataforma ya
-                      cumple con los requisitos aplicables y actualmente se
-                      encuentra en proceso formal de verificación. Una vez
-                      obtenida la{" "}
+                      Ramazzini incorpora controles y funciones alineados con
+                      requisitos aplicables de la NOM-024-SSA3-2012. La
+                      certificación aún no ha sido obtenida. Consulta el estado
+                      del{" "}
                       <a
                         className="guide-inline-link"
                         href="/certificacion-nom-024-ssa3-2012/"
                       >
                         certificación NOM-024-SSA3-2012
                       </a>
-                      , lo anunciaremos a través de esta página y de los medios
-                      oficiales de Ramazzini.
+                      .
                     </>
                   ) : (
                     answer
@@ -1193,8 +1192,8 @@ export default function Home() {
             <span className="section-kicker">Guías</span>
             <h2>Recursos de salud ocupacional</h2>
             <p className="lead">
-              Guías prácticas sobre evaluación, expedientes, aptitud y vigilancia
-              de la salud en el trabajo.
+              Guías prácticas sobre evaluación, expedientes, aptitud y
+              vigilancia de la salud en el trabajo.
             </p>
           </div>
           <ul className="home-resources">
@@ -1260,42 +1259,6 @@ export default function Home() {
         eventParams={{ cta_location: "floating" }}
       >
         <Image src="/whatsapp-logo.svg" alt="" width={30} height={30} />
-      </TrackedCta>
-    </div>
-  );
-}
-
-function HeroVideo() {
-  return (
-    <div
-      className="hero-video-wrap hero-reveal"
-      style={{ animationDelay: "920ms" }}
-    >
-      <div className="hero-video-card">
-        <div className="mock-window-bar" aria-hidden="true">
-          <span className="dot" />
-          <span className="dot" />
-          <span className="dot" />
-        </div>
-        <div
-          className="video-panel hero-video"
-          aria-label="Video demostrativo de Ramazzini"
-        >
-          <iframe
-            title="Video demostrativo de Ramazzini"
-            src="https://www.youtube-nocookie.com/embed/SN6BFiEI3BU?rel=0&modestbranding=1"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
-      </div>
-      <TrackedCta
-        className="video-under-cta"
-        href="#demo-form"
-        event="demo_cta_click"
-        eventParams={{ cta_location: "video_section" }}
-      >
-        Descubre cómo agilizar tu operación <ArrowRight size={16} />
       </TrackedCta>
     </div>
   );
@@ -1474,14 +1437,25 @@ function Plan({
           </li>
         ))}
       </ul>
-      <TrackedCta
-        className="button button-primary"
-        href={appUrl}
-        event="trial_cta_click"
-        eventParams={{ cta_location: "pricing", plan }}
-      >
-        Probar gratis 15 días
-      </TrackedCta>
+      {plan === "enterprise" ? (
+        <TrackedCta
+          className="button button-primary"
+          href="#demo"
+          event="demo_cta_click"
+          eventParams={{ cta_location: "pricing" }}
+        >
+          Agendar demo personalizada
+        </TrackedCta>
+      ) : (
+        <TrackedCta
+          className="button button-primary"
+          href={appUrl}
+          event="trial_cta_click"
+          eventParams={{ cta_location: "pricing", plan }}
+        >
+          Probar gratis 15 días
+        </TrackedCta>
+      )}
     </article>
   );
 }
@@ -1490,6 +1464,7 @@ function DemoForm() {
   return (
     <TrackedForm
       className="form-panel"
+      data-clarity-mask="true"
       id="demo-form"
       action="/api/demo"
       method="post"
@@ -1599,4 +1574,3 @@ function DemoForm() {
     </TrackedForm>
   );
 }
-

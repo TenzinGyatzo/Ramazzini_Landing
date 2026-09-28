@@ -499,10 +499,10 @@ export default function VigilanciaDeLaSaludDeLosTrabajadoresPage() {
                   identificar con el paso del tiempo.
                 </p>
                 <p className="lead">
-                  Eso implica relacionar trabajadores con riesgos y exposiciones,
-                  elegir evaluaciones pertinentes, conservar resultados
-                  anteriores y dar seguimiento cuando aparece algo que merece
-                  atención.
+                  Eso implica relacionar trabajadores con riesgos y
+                  exposiciones, elegir evaluaciones pertinentes, conservar
+                  resultados anteriores y dar seguimiento cuando aparece algo
+                  que merece atención.
                 </p>
               </div>
             </div>
@@ -536,19 +536,20 @@ export default function VigilanciaDeLaSaludDeLosTrabajadoresPage() {
               <p className="lead">
                 Para hacerlo necesitamos conocer los riesgos presentes,
                 identificar a las personas expuestas, decidir qué vale la pena
-                evaluar y conservar suficiente información para reconocer cambios
-                cuando volvamos a revisar al trabajador.
+                evaluar y conservar suficiente información para reconocer
+                cambios cuando volvamos a revisar al trabajador.
               </p>
               <p className="lead">
                 Por eso, la vigilancia no termina cuando se realiza el estudio o
                 se entrega un resultado. También importa qué hacemos con ese
-                resultado, cuándo corresponde volver a evaluar y si los hallazgos
-                empiezan a mostrar algún patrón individual o colectivo.
+                resultado, cuándo corresponde volver a evaluar y si los
+                hallazgos empiezan a mostrar algún patrón individual o
+                colectivo.
               </p>
               <aside className="guide-callout">
                 <p>
-                  Vigilar no es repetir estudios: es saber qué estamos siguiendo,
-                  en quién y para qué.
+                  Vigilar no es repetir estudios: es saber qué estamos
+                  siguiendo, en quién y para qué.
                 </p>
               </aside>
             </div>
@@ -731,7 +732,9 @@ export default function VigilanciaDeLaSaludDeLosTrabajadoresPage() {
           <section className="guide-section container" id="comparacion">
             <div className="section-head">
               <span className="section-kicker">La evolución</span>
-              <h2>Comparar suele ser más útil que mirar un resultado aislado</h2>
+              <h2>
+                Comparar suele ser más útil que mirar un resultado aislado
+              </h2>
               <p className="lead">
                 Cuando las evaluaciones permanecen relacionadas dentro del
                 historial, podemos observar trayectorias en lugar de fotografías
@@ -868,9 +871,7 @@ export default function VigilanciaDeLaSaludDeLosTrabajadoresPage() {
             <div className="guide-context">
               <div className="section-head">
                 <span className="section-kicker">Contexto mexicano</span>
-                <h2>
-                  Vigilancia de la salud de los trabajadores en México
-                </h2>
+                <h2>Vigilancia de la salud de los trabajadores en México</h2>
                 <p className="lead">
                   En México, la vigilancia de la salud se relaciona con el marco
                   general de seguridad y salud en el trabajo y con disposiciones
@@ -1015,7 +1016,9 @@ export default function VigilanciaDeLaSaludDeLosTrabajadoresPage() {
             <IsoMark className="section-sigil section-sigil-right" />
             <div className="feature-visual">
               <div className="section-head">
-                <span className="section-kicker">Del programa al seguimiento</span>
+                <span className="section-kicker">
+                  Del programa al seguimiento
+                </span>
                 <h2>
                   Cómo ayuda Ramazzini a organizar la vigilancia de la salud
                 </h2>
@@ -1038,7 +1041,7 @@ export default function VigilanciaDeLaSaludDeLosTrabajadoresPage() {
                     event="demo_cta_click"
                     eventParams={{ cta_location: "guide_cta" }}
                   >
-                    <CalendarDays size={18} /> Agenda una demo
+                    <CalendarDays size={18} /> Agendar demo personalizada
                   </TrackedCta>
                   <TrackedCta
                     className="button button-secondary"
@@ -1046,7 +1049,7 @@ export default function VigilanciaDeLaSaludDeLosTrabajadoresPage() {
                     event="trial_cta_click"
                     eventParams={{ cta_location: "guide_cta", plan: "none" }}
                   >
-                    Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
+                    Probar gratis 15 días <ArrowRight size={18} />
                   </TrackedCta>
                 </div>
               </div>
@@ -1114,7 +1117,7 @@ export default function VigilanciaDeLaSaludDeLosTrabajadoresPage() {
                   event="trial_cta_click"
                   eventParams={{ cta_location: "closing_cta", plan: "none" }}
                 >
-                  Prueba Ramazzini gratis 15 días <ArrowRight size={18} />
+                  Probar gratis 15 días <ArrowRight size={18} />
                 </TrackedCta>
                 <TrackedCta
                   className="button button-secondary"
@@ -1122,7 +1125,7 @@ export default function VigilanciaDeLaSaludDeLosTrabajadoresPage() {
                   event="demo_cta_click"
                   eventParams={{ cta_location: "closing_cta" }}
                 >
-                  <CalendarDays size={18} /> Agenda una demo
+                  <CalendarDays size={18} /> Agendar demo personalizada
                 </TrackedCta>
               </div>
             </div>
