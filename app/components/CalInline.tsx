@@ -147,7 +147,7 @@ export function CalInline() {
       <div className="calendar-frame">
         <div
           id="ramazzini-cal-inline"
-          style={{ width: "100%", minHeight: "650px", overflow: "auto" }}
+          style={{ width: "100%", height: "100%", minHeight: "720px", overflow: "scroll" }}
         />
       </div>
       <noscript>
